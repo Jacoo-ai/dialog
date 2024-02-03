@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport example</title>
+
+  <!-- Load Rapport Web Viewer. -->
+  <script src="https://cdn.rapport.cloud/rapport-web-viewer/rapport.js"></script>
+</head>
+
+<body>
+  <button id="demoButton">
+    Start Demo
+  </button>
+
+  <button id="endButton">
+    End Demo
+  </button>
+
+  <div>
+    <rapport-scene id="rapportScene" background-color="transparent" loading-image=""
+      style="width: 600px; height: 600px;" />
+  </div>
+
+  <label for="Name">Type text to speak:</label>
+  <input type="text" id="textInput" name="textInput">
+
+  <button id="sendText">
+    Send Text
+  </button>
+</body>
+
+<script>
+  const rapportScene = document.getElementById('rapportScene');
+  const demoButton = document.getElementById('demoButton');
+  const endButton = document.getElementById('endButton');
+
+  demoButton.addEventListener('click', async () => {
+    /* User accepted preference cookies. */
+    const enableCookies = false;
+
+    try {
+      await rapportScene.sessionRequest({
+        projectId: '0af3897d-9454-4b87-b1a1-b3ef18a709a9',
+        projectToken: '7e653f4c-4b29-4929-bd07-488707b3a423',
+        aiUserId: 'a32a2b2b-fd77-48d7-9795-36f84ea26965',
+        lobbyZoneId: 'MPA',
+        openingText: 'Start',
+        enableCookies,
+        sessionConnected: () => {
+          /* Connected handler. The avatar is ready for the conversation. */
+          rapportScene.modules.tts.sendText("hello, really nice to meet you");
+        },
+        sessionDisconnected: () => {
+          /* Timeout handler. */
+        },
+      });
+    } catch (error) {
+      /* Handle error. */
+      console.error(error);
+    }
+  });
+
+  /* End demo. */
+  sendText.addEventListener('click', async () => {
+    rapportScene.modules.tts.sendText(textInput.value);
+  });
+  /* End demo. */
+  endButton.addEventListener('click', async () => {
+    await rapportScene.sessionDisconnect();
+  });
+</script>
+
+</html>
