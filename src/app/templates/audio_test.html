@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>语音录制和上传</title>
+</head>
+<body>
+    <button id="startRecord">开始录制</button>
+    <button id="stopRecord" disabled>停止录制</button>
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        document.getElementById("startRecord").onclick = function() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+
+                    mediaRecorder.ondataavailable = function(event) {
+                        audioChunks.push(event.data);
+                    };
+
+                    mediaRecorder.onstop = function() {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const formData = new FormData();
+                        formData.append("audio_data", audioBlob);
+
+                        fetch("/upload", { method: "POST", body: formData })
+                            .then(response => response.json())
+                            .then(data => console.log(data))
+                            .catch(error => console.error(error));
+
+                        audioChunks = [];
+                    };
+
+                    document.getElementById("stopRecord").disabled = false;
+                })
+                .catch(error => console.error(error));
+        };
+
+        document.getElementById("stopRecord").onclick = function() {
+            mediaRecorder.stop();
+            document.getElementById("stopRecord").disabled = true;
+        };
+    </script>
+</body>
+</html>

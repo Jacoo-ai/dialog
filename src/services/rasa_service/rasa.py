@@ -5,7 +5,6 @@ from rasa.core.agent import Agent
 import asyncio
 
 
-
 class Rasa:
     def __init__(self, file_path):
         self.__model_path = get_local_model(file_path)
