@@ -4,7 +4,8 @@ from threading import Thread
 
 import requests
 from services.flask_service import app as flask_server
-from services.rasa_service.rasa import Rasa
+from services.rasa_service.rasa import rasa_service as rasa_server
+from services.asr_service import google_asr as asr_server
 
 
 def send_text(text):
@@ -15,6 +16,17 @@ def send_text(text):
     print(text)
     print(response)
     print("\n\n\n")
+
+
+def enable_speak():
+    requests.get("http://127.0.0.1:5000/enable_speak")
+    print("speak enabled")
+
+
+def disable_speak():
+    requests.get("http://127.0.0.1:5000/disable_speak")
+    print("speak enabled")
+
 
 def wait_speak_enable():
     # print(requests.get("http://127.0.0.1:5000/get_state"))
@@ -32,23 +44,25 @@ def slow_print_waiting():
     time.sleep(1)
 
 
-def rasa_story_1():
-    model_path = "rasa_train/models/20240201-235608-cloudy-kern.tar.gz"
-    rasa_service = Rasa(model_path)
-
+def ask_and_response():
     wait_speak_enable()
-    text = rasa_service.wait_for_response("Can you introduce yourself?")
-    send_text(text)
-    text = rasa_service.wait_for_response("Please begin the lesson.")
-    send_text(text)
-    text = rasa_service.wait_for_response("Could you clarify at what altitude it's hard to breathe?")
-    send_text(text)
-    text = rasa_service.wait_for_response("Please continue.")
-    send_text(text)
-    text = rasa_service.wait_for_response("How long did it take him to climb Everest?")
-    send_text(text)
-    text = rasa_service.wait_for_response("Please continue.")
-    send_text(text)
+
+    user_text = asr_server.record_and_recognize()
+    read_text = rasa_server.wait_for_response(user_text)
+    send_text(read_text)
+
+
+def rasa_story_1():
+    for i in range(6):
+        ask_and_response()
+    """
+    > Can you introduce yourself?
+    > Please begin the lesson.
+    > Could you clarify at what altitude it's hard to breathe?
+    > Please continue.
+    > How long did it take him to climb Everest?
+    > Please continue.
+    """
 
 
 # def flask_service():
@@ -70,4 +84,3 @@ if __name__ == "__main__":
 
     rasa_thread.join()
     flask_thread.join()
-

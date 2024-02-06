@@ -24,3 +24,7 @@ class Rasa:
         while text == "" or time.time() - start_time < 5:
             pass
         return text
+
+
+model_path = "rasa_train/models/20240201-235608-cloudy-kern.tar.gz"
+rasa_service = Rasa(model_path)
