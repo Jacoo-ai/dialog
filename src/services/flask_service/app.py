@@ -5,6 +5,7 @@ import os
 
 app = Flask(__name__)
 text_queue = Queue()
+speak_enable = False
 
 
 @app.route('/')
@@ -24,19 +25,30 @@ def send_text():
 
 @app.route('/get_text', methods=['GET'])
 def get_text():
-    if text_queue.empty():
+    if text_queue.empty() or not speak_enable:
         return jsonify(text_content="")
     return jsonify(text_content=text_queue.get())
 
 
-initialized = False
+@app.route('/enable_speak', methods=['GET'])
+def enable_speak():
+    global speak_enable
+
+    speak_enable = True
+    return "enabled"
 
 
-@app.route('/web_init', methods=['GET'])
-def web_init():
-    global initialized
-    initialized = True
-    return "initialized"
+@app.route('/disable_speak', methods=['GET'])
+def disable_speak():
+    global speak_enable
+
+    speak_enable = False
+    return "disabled"
+
+
+@app.route('/get_state', methods=['GET'])
+def get_state():
+    return "True" if speak_enable else "False"
 
 
 def __request_parse(req_data):
@@ -47,20 +59,10 @@ def __request_parse(req_data):
     return data
 
 
-class FlaskService:
-    def __init__(self):
-        app.config['SECRET_KEY'] = os.urandom(24)
-        self.initialized = False
-
-    def run(self):
-        app.run(debug=False, use_reloader=False)
-
-    def get_initialized(self):
-        if initialized:
-            self.initialized = True
-        return self.initialized
-
+def flask_server_start(port=5000):
+    app.config['SECRET_KEY'] = os.urandom(24)
+    app.run(debug=False, use_reloader=False, port=port)
 
 if __name__ == '__main__':
-    app.config['SECRET_KEY'] = os.urandom(24)
-    app.run(debug=False, use_reloader=False, port=1234)
+
+    flask_server_start()

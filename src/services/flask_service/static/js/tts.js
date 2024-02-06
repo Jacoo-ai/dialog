@@ -1,10 +1,8 @@
+let started = false;
+const rapportScene = document.getElementById('rapportScene');
+const demoButton = document.getElementById('demoButton');
+const endButton = document.getElementById('endButton');
 
-  let started = false;
-  const rapportScene = document.getElementById('rapportScene');
-  const demoButton = document.getElementById('demoButton');
-  const endButton = document.getElementById('endButton');
-  // const sendTextButton = document.getElementById('sendText');
-  // const textInput = document.getElementById('textInput');
 
   demoButton.addEventListener('click', async () => {
     const enableCookies = false;
@@ -19,7 +17,8 @@
         enableCookies,
         sessionConnected: () => {
           started = true;
-          rapportScene.modules.tts.sendText("hello, really nice to meet you");
+          send_text("hello, really nice to meet you");
+          enable_speak();
         },
         sessionDisconnected: () => {
           // Timeout handler.
@@ -51,7 +50,8 @@
 
   async function send_text(text) {
     if (started && text) {
-      rapportScene.modules.tts.sendText(text);
+       rapportScene.modules.tts.sendText(text)
+      // rapportScene.modules.tts.sendText(text);
     } else {
       console.error("Not started or no text");
     }
@@ -73,6 +73,29 @@
               }
               // 定时调用
               setTimeout(getTextUpdater, 1000);
+          }
+      });
+  }
+
+
+    function enable_speak() {
+      $.ajax({
+          url: '/enable_speak',
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) {
+              console.log("enabled");
+          }
+      });
+  }
+
+  function disable_speak() {
+      $.ajax({
+          url: '/disable_speak',
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) {
+              console.log("enabled");
           }
       });
   }

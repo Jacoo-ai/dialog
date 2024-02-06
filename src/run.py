@@ -1,24 +1,25 @@
 import sys
 import time
+from threading import Thread
 
 import requests
-# from app.app import FlaskService
-from config import config
+from services.flask_service import app as flask_server
 from services.rasa_service.rasa import Rasa
-
-# app = FlaskService()
-model_path = config['rasa']['model_path']
-rasa_service = Rasa(model_path)
 
 
 def send_text(text):
     json_data = {'text_content': text}  # 要发送的JSON数据
-    response = requests.post("http://127.0.0.1:1234/send_text", json=json_data)
+    response = requests.post("http://127.0.0.1:5000/send_text", json=json_data)
 
     print("\n\n\n# ==================================== #")
     print(text)
     print(response)
     print("\n\n\n")
+
+def wait_speak_enable():
+    # print(requests.get("http://127.0.0.1:5000/get_state"))
+    while requests.get("http://127.0.0.1:5000/get_state").text != "True":
+        time.sleep(0.5)
 
 
 def slow_print_waiting():
@@ -31,7 +32,11 @@ def slow_print_waiting():
     time.sleep(1)
 
 
-def rasa_test():
+def rasa_story_1():
+    model_path = "rasa_train/models/20240201-235608-cloudy-kern.tar.gz"
+    rasa_service = Rasa(model_path)
+
+    wait_speak_enable()
     text = rasa_service.wait_for_response("Can you introduce yourself?")
     send_text(text)
     text = rasa_service.wait_for_response("Please begin the lesson.")
@@ -47,18 +52,22 @@ def rasa_test():
 
 
 # def flask_service():
-#     app.run()
+#     flask_service.run()
+def run_flask():
+    flask_server.flask_server_start(port=5000)
+
+
+def run_rasa():
+    rasa_story_1()
 
 
 if __name__ == "__main__":
-    # with ProcessPoolExecutor(max_workers=8) as executor:
-    #     executor.submit(flask_service)
-    #
-    # while not app.get_initialized():
-    #     slow_print_waiting()
+    flask_thread = Thread(target=run_flask)
+    rasa_thread = Thread(target=run_rasa)
 
-    rasa_test()
-    # flask_thread = threading.Thread(target=rasa_test)
-    # flask_thread.start()
+    flask_thread.start()
+    rasa_thread.start()
 
-    # flask_service()
+    rasa_thread.join()
+    flask_thread.join()
+
