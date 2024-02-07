@@ -26,5 +26,5 @@ class Rasa:
         return text
 
 
-model_path = "rasa_train/models/20240201-235608-cloudy-kern.tar.gz"
+model_path = "rasa_train/models/20240202-124907-minimum-pad.tar.gz"
 rasa_service = Rasa(model_path)
