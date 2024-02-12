@@ -1,6 +1,5 @@
 version: "3.0"
 intents:
-  - greet
   - introduce_agent
   - start_lesson
   - ask_for_clarification
@@ -9,6 +8,10 @@ intents:
   - ask_about_identity_change
   - ask_about_physical_condition
   - conclude_lesson
+  - ask_for_repetition
+  - thank_teacher
+  - express_interest
+  - greet
 
 responses:
   utter_introduce_agent:
@@ -32,7 +35,13 @@ responses:
   utter_fourth_breakpoint_continuation:
     - text: "It would take a book to list all the races and awards he's won and the mountains he's climbed. And even here, Kilian’s achievements exceed the average person as, somehow, he finds time to record his career on his blog and has written three books, Run or Die, The Invisible Border and Summits of My Life."
   utter_conclude_lesson:
-    - text: "Wow, that was incredible! Thanks a ton for sharing all that. I bet everyone's got a lot to think about now. Any questions you want to ask the class? (Turning to the agent) Agent: Yeah, actually, I've got a few things I'm curious about. The question for you guys is after knowing Kilian’s story, what can you learn from him? Teacher: Thanks a million to our guest and all of you for being such a great audience. That's a wrap for today's class. Catch you all next time!"
+    - text: "Yeah, actually, I've got a few things I'm curious about. The question for you guys is after knowing Kilian’s story, what can you learn from him?"
+  utter_thank_teacher:
+    - text: "You're welcome! If you have any more questions, feel free to ask."
+  utter_express_interest:
+    - text: "I'm glad you find it interesting!"
+  utter_greet:
+    - text: "Hello, nice to meet you!"
 
 actions:
   - utter_introduce_agent
@@ -46,6 +55,12 @@ actions:
   - utter_ask_about_physical_condition_response
   - utter_fourth_breakpoint_continuation
   - utter_conclude_lesson
+  - action_repeat_last_bot_message
+  - utter_thank_teacher
+  - utter_express_interest
+  - utter_greet
+
+
 
 session_config:
   session_expiration_time: 60

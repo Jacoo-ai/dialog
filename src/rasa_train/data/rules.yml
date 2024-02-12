@@ -1,7 +1,3 @@
-version: "3.1"
-
-rules:
-
 #- rule: Say goodbye anytime the user says goodbye
 #  steps:
 #  - intent: goodbye
@@ -11,3 +7,23 @@ rules:
 #  steps:
 #  - intent: bot_challenge
 #  - action: utter_iamabot
+rules:
+  - rule: Acknowledge thanks
+    steps:
+      - intent: thank_teacher
+      - action: utter_thank_teacher
+
+  - rule: Expand on topic when interest is expressed
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+
+  - rule: Repeat last bot message
+    steps:
+    - intent: ask_for_repetition
+    - action: action_repeat_last_bot_message
+
+  - rule: Say hello when greet
+    steps:
+      - intent: greet
+      - action: utter_greet
