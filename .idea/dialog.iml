@@ -2,6 +2,24 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp6crpli8t" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp9_11pjco" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp9g17jiq1" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmph9zss91t" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpowpqbyak" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppggy03qp" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppm81ltih" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppsgcuy53" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpq5pabera" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsgp5mmn6" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsnzpbpo2" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsvbaczaz" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpv_oomqqk" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpwwi9d8m9" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpx0vczdcd" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpxyj8vogk" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpy1jmh07k" />
+      <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpyszzzq7z" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="inheritedJdk" />

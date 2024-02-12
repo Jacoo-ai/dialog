@@ -1,3 +1,2 @@
-/src/rasa_train/.rasa/*
-/src/rasa_train/results/*
-*/__pycache__/*
+/src/rasa_train/.rasa/**
+src/**/__pycache__/

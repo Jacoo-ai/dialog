@@ -46,7 +46,6 @@ class ActionRepeatLastBotMessage(Action):
         if last_bot_message is not None:
             dispatcher.utter_message(text=last_bot_message["text"])
         else:
-            # 如果没有找到机器人的消息，发送一个默认回复
             dispatcher.utter_message(text="I'm not sure how to repeat that, can you ask again?")
 
         return []
