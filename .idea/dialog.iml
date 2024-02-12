@@ -6,8 +6,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery-3.6.0" level="application" />
-    <orderEntry type="library" name="rapport" level="application" />
-    <orderEntry type="library" name="rapport" level="application" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="format" value="PLAIN" />
+    <option name="myDocStringFormat" value="Plain" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/src/services/flask_service/templates" />
+      </list>
+    </option>
   </component>
 </module>
