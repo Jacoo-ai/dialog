@@ -57,15 +57,6 @@ const endButton = document.getElementById('endButton');
       console.log(e.detail.text);
   });
 
-  // sendTextButton.addEventListener('click', () => {
-  //   const text = textInput.value;
-  //   if (started && text) {
-  //     rapportScene.modules.tts.sendText(text);
-  //   } else {
-  //     console.error("Not started or no text");
-  //   }
-  // });
-
   endButton.addEventListener('click', async () => {
 
     if (started) {
@@ -109,17 +100,6 @@ const endButton = document.getElementById('endButton');
     function enable_speak() {
       $.ajax({
           url: '/enable_tts',
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-              console.log("enabled");
-          }
-      });
-  }
-
-  function disable_speak() {
-      $.ajax({
-          url: '/disable_tts',
           type: 'GET',
           dataType: 'json',
           success: function (data) {

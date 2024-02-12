@@ -20,7 +20,6 @@ def send_text():
     text = data.get('text_content')
 
     text_queue.put(text)
-    print(text)
     return "success"
 
 
@@ -46,17 +45,12 @@ def disable_tts():
     tts_enable = False
     return "tts_disabled"
 
-
-@app.route('/get_state', methods=['GET'])
-def get_tts_state():
-    return "True" if tts_enable else "False"
-
-
 @app.route('/tts_end', methods=['GET'])
 def enable_asr():
     global asr_enable
 
     asr_enable = True
+    print("asr_enabled")
     return 'asr_enabled'
 
 
@@ -65,6 +59,7 @@ def disable_asr():
     global asr_enable
 
     asr_enable = False
+    print("asr_disabled")
     return 'asr_disabled'
 
 
@@ -78,11 +73,16 @@ def __request_parse(req_data):
 
 def flask_server_start(port=5000):
     app.config['SECRET_KEY'] = os.urandom(24)
-    app.run(debug=False, use_reloader=False, port=port)
+    app.run(debug=False, port=port)
 
 
-def get_asr_state():
-    return "True" if asr_enable else "False"
+def get_speak_state():
+    print("===================")
+    print(asr_enable)
+    print(tts_enable)
+    print("===================")
+
+    return True if (asr_enable and tts_enable) else False
 
 
 if __name__ == '__main__':

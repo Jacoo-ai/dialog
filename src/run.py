@@ -29,8 +29,9 @@ def disable_speak():
 
 
 def wait_speak_enable():
-    while requests.get("http://127.0.0.1:5000/get_state").text != "True":
+    while not flask_server.get_speak_state():
         time.sleep(0.5)
+    time.sleep(1)
 
 
 def ask_and_response():
@@ -40,8 +41,8 @@ def ask_and_response():
     # user_text = input("input request")
 
     read_text = rasa_server.wait_for_response(user_text)
-    print(read_text)
     send_text(read_text)
+    time.sleep(5)
 
 
 def rasa_story_1():
