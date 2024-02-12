@@ -29,6 +29,34 @@ const endButton = document.getElementById('endButton');
     }
   });
 
+
+  rapportScene.addEventListener('ttsStart', (e) => {
+      $.ajax({
+          url: '/tts_start',
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) {
+              console.log("disabled");
+          }
+      });
+      console.log(e.detail.commandId);
+      console.log(e.detail.text);
+  });
+
+
+  rapportScene.addEventListener('ttsEnd', (e) => {
+      $.ajax({
+          url: '/tts_end',
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) {
+              console.log("enabled");
+          }
+      });
+      console.log(e.detail.commandId);
+      console.log(e.detail.text);
+  });
+
   // sendTextButton.addEventListener('click', () => {
   //   const text = textInput.value;
   //   if (started && text) {
@@ -80,7 +108,7 @@ const endButton = document.getElementById('endButton');
 
     function enable_speak() {
       $.ajax({
-          url: '/enable_speak',
+          url: '/enable_tts',
           type: 'GET',
           dataType: 'json',
           success: function (data) {
@@ -91,7 +119,7 @@ const endButton = document.getElementById('endButton');
 
   function disable_speak() {
       $.ajax({
-          url: '/disable_speak',
+          url: '/disable_tts',
           type: 'GET',
           dataType: 'json',
           success: function (data) {

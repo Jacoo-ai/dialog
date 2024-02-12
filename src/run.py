@@ -33,11 +33,11 @@ def wait_speak_enable():
         time.sleep(0.5)
 
 
-def ask_and_response(user_text):
+def ask_and_response():
     wait_speak_enable()
 
-    # user_text = asr_server.record_and_recognize()
-    # user_text = input()
+    user_text = asr_server.record_and_recognize()
+    # user_text = input("input request")
 
     read_text = rasa_server.wait_for_response(user_text)
     print(read_text)
@@ -53,14 +53,14 @@ def rasa_story_1():
         > How long did it take him to climb Everest?
         > Please continue.
     """
-    # while True:
-    #     ask_and_response()
-    ask_and_response("Can you introduce yourself")
-    ask_and_response("Please begin the lesson")
-    ask_and_response("Could you clarify at what altitude it's hard to breathe")
-    ask_and_response("Please continue")
-    ask_and_response("How long did it take him to climb Everest")
-    ask_and_response("Please continue")
+    while True:
+        ask_and_response()
+    # ask_and_response("Can you introduce yourself")
+    # ask_and_response("Please begin the lesson")
+    # ask_and_response("Could you clarify at what altitude it's hard to breathe")
+    # ask_and_response("Please continue")
+    # ask_and_response("How long did it take him to climb Everest")
+    # ask_and_response("Please continue")
 
 
 def run_flask():

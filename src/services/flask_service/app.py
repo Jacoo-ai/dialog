@@ -5,7 +5,8 @@ import os
 
 app = Flask(__name__)
 text_queue = Queue()
-speak_enable = False
+tts_enable = False
+asr_enable = False
 
 
 @app.route('/')
@@ -25,30 +26,46 @@ def send_text():
 
 @app.route('/get_text', methods=['GET'])
 def get_text():
-    if text_queue.empty() or not speak_enable:
+    if text_queue.empty() or not tts_enable:
         return jsonify(text_content="")
     return jsonify(text_content=text_queue.get())
 
 
-@app.route('/enable_speak', methods=['GET'])
-def enable_speak():
-    global speak_enable
+@app.route('/enable_tts', methods=['GET'])
+def enable_tts():
+    global tts_enable
 
-    speak_enable = True
-    return "enabled"
+    tts_enable = True
+    return "tts_enabled"
 
 
-@app.route('/disable_speak', methods=['GET'])
-def disable_speak():
-    global speak_enable
+@app.route('/disable_tts', methods=['GET'])
+def disable_tts():
+    global tts_enable
 
-    speak_enable = False
-    return "disabled"
+    tts_enable = False
+    return "tts_disabled"
 
 
 @app.route('/get_state', methods=['GET'])
-def get_state():
-    return "True" if speak_enable else "False"
+def get_tts_state():
+    return "True" if tts_enable else "False"
+
+
+@app.route('/tts_end', methods=['GET'])
+def enable_asr():
+    global asr_enable
+
+    asr_enable = True
+    return 'asr_enabled'
+
+
+@app.route('/tts_start', methods=['GET'])
+def disable_asr():
+    global asr_enable
+
+    asr_enable = False
+    return 'asr_disabled'
 
 
 def __request_parse(req_data):
@@ -63,6 +80,10 @@ def flask_server_start(port=5000):
     app.config['SECRET_KEY'] = os.urandom(24)
     app.run(debug=False, use_reloader=False, port=port)
 
-if __name__ == '__main__':
 
+def get_asr_state():
+    return "True" if asr_enable else "False"
+
+
+if __name__ == '__main__':
     flask_server_start()
