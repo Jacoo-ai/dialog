@@ -14,6 +14,10 @@ nlu:
     - I'd like to know more about you, who are you?
     - What are you here for?
     - Can you describe your purpose?
+    - What's your function?
+    - Hey there, how's it going?
+    - Hi, what's your name?
+
 - intent: start_lesson
   examples: |
     - Please begin the lesson.
@@ -28,6 +32,8 @@ nlu:
     - Time to start learning, right?
     - Let's kick off today's lesson.
     - Ready to start, please proceed.
+    - Can we start the class now?
+    - I'm ready for the lesson, can we start?
 - intent: ask_for_clarification
   examples: |
     - Could you clarify at what altitude it's hard to breathe?

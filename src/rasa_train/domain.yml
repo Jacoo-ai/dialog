@@ -21,7 +21,7 @@ responses:
   utter_ask_for_clarification_response:
     - text: "At 3500 metres, most people find it hard to breath."
   utter_first_breakpoint_continuation:
-    - text: "Before we continue, I'd like you to consider these questions: Do you enjoy mountaineering? What are your thoughts on the sport? Do you perceive it as dangerous, or do you believe it's worth the risk? But ultra-distance and mountain runner Kilian Jornet Burgada ascended the mountain in May 2017 alone, without an oxygen mask or fixed ropes for climbing. Oh, and he did it in 26 hours. With food poisoning. And then, five days later, he did it again, this time in only 17 hours."
+    - text: "Before we continue, I'd like you to consider these questions: What are your thoughts on the sport?          You can answer these questions later. But ultra-distance and mountain runner Kilian Jornet Burgada ascended the mountain in May 2017 alone, without an oxygen mask or fixed ropes for climbing. Oh, and he did it in 26 hours. With food poisoning. And then, five days later, he did it again, this time in only 17 hours."
   utter_inquire_about_duration_response:
     - text: "The first one took 26 hours and the second one took 17 hours."
   utter_second_breakpoint_continuation:
