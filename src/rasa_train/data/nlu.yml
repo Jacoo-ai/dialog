@@ -30,18 +30,17 @@ nlu:
     - Ready to start, please proceed.
 - intent: ask_for_clarification
   examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
+    - How many different languages exist in the world today?
+    - What is the total number of languages spoken by humans worldwide?
+    - How many distinct languages are currently in use across the globe?
+    - What is the number of languages currently spoken by the human population?
+    - What is the total count of languages that exist among humans?
+    - How many language varieties are currently in existence among humans?
+    - Can you tell me the number of languages spoken by people today?
+    - What is the total number of languages in use today?
+    - How many languages are spoken by humans today?
+    - What is the total number of languages in use by humans today?
+    - How many languages are currently spoken by the human population?
 - intent: request_continuation
   examples: |
     - Please continue.
@@ -56,21 +55,22 @@ nlu:
     - I'm eager to hear more, continue please.
     - What follows in the story?
     - Carry on with the explanation.
-- intent: inquire_about_duration
+- intent: inquire_about_dolphin_language
   examples: |
-    - How long did it take him to climb Everest?
-    - What was the duration of Kilian's first and second ascents?
-    - Can you tell us about the time it took for the climbs?
-    - How much time was needed for each Everest climb?
-    - What's the time frame for his Everest ascents?
-    - How long were Kilian's Everest expeditions?
-    - Duration of Kilian's climbs, please?
-    - Can you detail the time it took Kilian to summit Everest?
-    - How long did each Everest ascent take?
-    - Tell me the climbing duration for Kilian.
-    - What are the timings for his Everest achievements?
-    - How much time did Kilian spend climbing Everest?
-- intent: ask_about_identity_change
+    - Pardon my interruption,but Why would we think that dolphin language also follows some grammar? 
+    - What leads us to speculate that dolphins might exhibit grammar in their language?
+    - How do we justify the assumption that dolphins use grammar in their communication?
+    - What reasons support the idea that dolphin language may contain grammatical structures?
+    - What evidence suggests that dolphins may possess grammar in their communication system?
+    - In what ways do observations indicate that dolphins utilize grammar in their language?
+    - What makes us think that dolphins might use grammar in their communication?
+    - What are the reasons for believing that dolphins may have grammar in their language?
+    - What leads us to believe that dolphins might have grammar in their communication?
+    - What observations suggest that dolphins may use grammar in their language?
+    - What evidence supports the idea that dolphins may have grammar in their communication?
+    - What reasons suggest that dolphins might have grammar in their language?
+    - What makes us think that dolphins might have grammar in their communication?
+- intent: ask_about_proto_language
   examples: |
     - What changed for him at 13 and again at 18?
     - Can you explain the key changes in his life at those ages?
@@ -84,40 +84,33 @@ nlu:
     - The changes at 13 and 18, can you expand on those?
     - What were the pivotal moments at 13 and 18 in his life?
     - How did Kilian's direction change at 13 and 18?
-- intent: ask_about_physical_condition
+
+- intent: student_answer_questions_about_language
   examples: |
-    - How does he maintain such a great physical condition?
-    - What makes Kilian's physical condition so remarkable?
-    - Can you tell us about his training regime?
-    - What's the secret to Kilian's fitness?
-    - How does Kilian stay in top shape?
-    - Can you explain his physical training and diet?
-    - What does Kilian do to keep fit?
-    - How does Kilian prepare physically for challenges?
-    - Details on Kilian's workout routine, please?
-    - What contributes to Kilian's peak physical condition?
-    - How does he manage his physical health so well?
-    - What are the specifics of his training schedule?
-- intent: conclude_lesson
+    - The development of the society may effect the language ability.
+    
+    
+    
+
+- intent: ask_about_human_civilization
   examples: |
-    - Wow, that was incredible! 
-    - Thanks a ton for sharing all that. 
-    - I bet everyone's got a lot to think about now. 
-    - Any questions you want to ask the class?
-    - Thanks a million to our guest and all of you for being such a great audience. 
-    - That's a wrap for today's class. Catch you all next time!"
-    - That was an amazing lesson, thank you.
-    - This concludes our lesson, right?
-    - Wow, what a story! Is that all for today?
-    - Thanks for the lesson, is it over now?
-    - Do we wrap up here?
-    - Is this the end of today's learning?
-    - Great story, are we done for the day?
-    - Was that the conclusion of our lesson?
-    - Have we reached the end of today's topic?
-    - Is there anything else, or is that it?
-    - That's all for today's lesson, correct?
-    - Are we concluding the lesson now?
+    - When did we begin to see evidence of early human civilization?
+    - When did evidence of ancient human civilization first emerge?
+    - When did we start to observe evidence of early human civilization?
+    - When did traces of ancient human culture first begin to surface?
+    - When did we first start to see signs of early human civilization?
+    - When did we first start to see evidence of ancient human civilization?
+    - When did we first start to see evidence of early human culture?
+    - When did we first start to see evidence of ancient human culture?
+    - When did we first start to see evidence of early human society?
+
+- intent: final_question_answer
+  examples: |
+    - I think it is meaningful, because it can help us learn more about how humans develop in the earth.
+    - Yes, it is meaningful, because it can help us understand the development of human society.
+    - Yes, it is meaningful, because it can help us understand the development of human civilization.
+    - Yes, it is meaningful, because it can help us understand the development of human language.
+    - Yes, it is meaningful, because it can help us understand the development of human culture.
 
 - intent: ask_for_repetition
   examples: |

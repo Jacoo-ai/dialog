@@ -37,7 +37,7 @@ class Rasa:
             print(f"启动动作服务器时出错: {e}")
 
 
-model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz'"
+model_path = "rasa_train/models/20240213-222529-wan-food.tar.gz"
 rasa_service = Rasa(model_path)
 
 # if __name__ == '__main__':

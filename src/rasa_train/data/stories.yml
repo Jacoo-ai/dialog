@@ -11,17 +11,19 @@ stories:
   - action: utter_ask_for_clarification_response
   - intent: request_continuation
   - action: utter_first_breakpoint_continuation
-  - intent: inquire_about_duration
-  - action: utter_inquire_about_duration_response
+  - intent: inquire_about_dolphin_language
+  - action: utter_inquire_about_dolphin_language_response
   - intent: request_continuation
   - action: utter_second_breakpoint_continuation
-  - intent: ask_about_identity_change
-  - action: utter_ask_about_identity_change_response
+  - intent: ask_about_proto_language
+  - action: utter_ask_about_proto_language_response
   - intent: request_continuation
   - action: utter_third_breakpoint_continuation
-  - intent: ask_about_physical_condition
-  - action: utter_ask_about_physical_condition_response
+  - intent: student_answer_questions_about_language
+  - action: utter_questions_about_language_response
+  - intent: ask_about_human_civilization
+  - action: utter_ask_about_human_civilization_response
   - intent: request_continuation
   - action: utter_fourth_breakpoint_continuation
-  - intent: conclude_lesson
-  - action: utter_conclude_lesson
+  - intent: final_question_answer
+  - action: utter_final_question_response

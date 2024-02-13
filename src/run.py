@@ -61,7 +61,7 @@ def rasa_story_1():
     ask_and_response("Please continue")
     ask_and_response("How long did it take him to climb Everest")
     ask_and_response("Please continue")
-
+    ask_and_response("Pardon my interruption,but Why would we think that dolphin language also follows some grammar?")
 
 def run_flask():
     flask_server.flask_server_start(port=5000)
