@@ -91,7 +91,7 @@ const endButton = document.getElementById('endButton');
                 console.log("Popped text:", text_content);
               }
               // 定时调用
-              setTimeout(getTextUpdater, 1000);
+              setTimeout(getTextUpdater, 100);
           }
       });
   }

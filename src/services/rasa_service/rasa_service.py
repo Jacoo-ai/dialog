@@ -1,5 +1,4 @@
 import subprocess
-import time
 from rasa.model import get_local_model
 from rasa.core.agent import Agent
 
@@ -22,23 +21,21 @@ class Rasa:
         self.__agent = Agent.load(self.__model_path)
 
     def wait_for_response(self, text):
-        start_time = time.time()
         text = asyncio.run(self.__parse_message(text))
-        while text == "" or time.time() - start_time < 5:
-            pass
         return text
 
     @staticmethod
     def start_rasa_actions():
         try:
             subprocess.Popen(["rasa", "run", "actions"], cwd="rasa_train")
-            print("动作服务器已启动...")
+            print("rasa action server started...")
         except Exception as e:
-            print(f"启动动作服务器时出错: {e}")
+            print(f"rasa action server error: {e}")
 
 
 model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
 rasa_service = Rasa(model_path)
+print("rasa server started...")
 
 # if __name__ == '__main__':
 #     model_path = "../../rasa_train/models/20240212-001803-obsolete-rent.tar.gz"

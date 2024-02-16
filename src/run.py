@@ -1,5 +1,3 @@
-import sys
-import time
 from threading import Thread
 
 import requests
@@ -12,10 +10,9 @@ def send_text(text):
     json_data = {'text_content': text}
     response = requests.post("http://127.0.0.1:5000/send_text", json=json_data)
 
-    print("\n\n\n# ==================================== #")
+    print("# ==================================== #")
     print(text)
-    print(response)
-    print("\n\n\n")
+    print()
 
 
 def enable_speak():
@@ -29,20 +26,30 @@ def disable_speak():
 
 
 def wait_speak_enable():
-    while not flask_server.get_speak_state():
-        time.sleep(0.5)
-    time.sleep(1)
+    with flask_server.condition:
+        while not flask_server.get_speak_state():
+            flask_server.condition.wait()
+    # while not flask_server.get_speak_state():
+    #     pass
+
+
+def wait_speak_start():
+    with flask_server.condition:
+        while not flask_server.get_speak_start_state():
+            flask_server.condition.wait()
+    # while not flask_server.get_speak_start_state():
+    #     pass
 
 
 def ask_and_response():
     wait_speak_enable()
-
     user_text = asr_server.record_and_recognize()
     # user_text = input("input request")
 
     read_text = rasa_server.wait_for_response(user_text)
     send_text(read_text)
-    time.sleep(5)
+    wait_speak_start()
+    # time.sleep(5)
 
 
 def rasa_story_1():
