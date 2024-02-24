@@ -20,7 +20,7 @@ class Rasa:
         self.__model_path = model_path
         self.__agent = Agent.load(self.__model_path)
 
-    def wait_for_response(self, text):
+    def wait_for_rasa_text(self, text):
         text = asyncio.run(self.__parse_message(text))
         return text
 
@@ -33,9 +33,11 @@ class Rasa:
             print(f"rasa action server error: {e}")
 
 
-model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
-rasa_service = Rasa(model_path)
+# model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
+model_path = "rasa_train/models/20240213-212046-largo-twitch.tar.gz"
 print("rasa server started...")
+rasa_service = Rasa(model_path)
+
 
 # if __name__ == '__main__':
 #     model_path = "../../rasa_train/models/20240212-001803-obsolete-rent.tar.gz"

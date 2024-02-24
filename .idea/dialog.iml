@@ -21,9 +21,12 @@
       <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpy1jmh07k" />
       <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpyszzzq7z" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/venv_asr" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (dialog)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.6.0" level="application" />
+    <orderEntry type="library" name="rapport" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

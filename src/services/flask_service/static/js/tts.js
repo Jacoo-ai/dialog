@@ -1,109 +1,112 @@
-let started = false;
+let enableTTS = false;
+let textUpdater;
 const rapportScene = document.getElementById('rapportScene');
 const demoButton = document.getElementById('demoButton');
 const endButton = document.getElementById('endButton');
 
 
-  demoButton.addEventListener('click', async () => {
+demoButton.addEventListener('click', async () => {
     const enableCookies = false;
 
     try {
-      await rapportScene.sessionRequest({
-        projectId: '0af3897d-9454-4b87-b1a1-b3ef18a709a9',
-        projectToken: '7e653f4c-4b29-4929-bd07-488707b3a423',
-        aiUserId: 'a32a2b2b-fd77-48d7-9795-36f84ea26965',
-        lobbyZoneId: 'MPA',
-        openingText: 'Start',
-        enableCookies,
-        sessionConnected: () => {
-          started = true;
-          send_text("hello, really nice to meet you");
-          enable_speak();
-        },
-        sessionDisconnected: () => {
-          // Timeout handler.
-        },
-      });
+        await rapportScene.sessionRequest({
+            projectId: '0af3897d-9454-4b87-b1a1-b3ef18a709a9',
+            projectToken: '7e653f4c-4b29-4929-bd07-488707b3a423',
+            aiUserId: 'a32a2b2b-fd77-48d7-9795-36f84ea26965',
+            lobbyZoneId: 'MPA',
+            openingText: 'Start',
+            enableCookies,
+            sessionConnected: () => {
+                enableTTS = true;
+                send_text("hello, really nice to meet you");
+                getTextUpdater();
+            },
+            sessionDisconnected: () => {
+                // Timeout handler.
+            },
+        });
     } catch (error) {
-      console.error("Initialized failed", error);
+        console.error("Initialized failed", error);
     }
-  });
+});
 
 
-  rapportScene.addEventListener('ttsStart', (e) => {
-      $.ajax({
-          url: '/tts_start',
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-              console.log("disabled");
-          }
-      });
-      console.log(e.detail.commandId);
-      console.log(e.detail.text);
-  });
+endButton.addEventListener('click', async () => {
 
-
-  rapportScene.addEventListener('ttsEnd', (e) => {
-      $.ajax({
-          url: '/tts_end',
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-              console.log("enabled");
-          }
-      });
-      console.log(e.detail.commandId);
-      console.log(e.detail.text);
-  });
-
-  endButton.addEventListener('click', async () => {
-
-    if (started) {
-      await rapportScene.sessionDisconnect();
-      started = false;
+    if (enableTTS) {
+        cancelTextUpdater();
+        await rapportScene.sessionDisconnect();
+        enableTTS = false;
     } else {
-      console.error("Have disconnected");
+        console.log("Have disconnected");
     }
-  });
+});
 
-  async function send_text(text) {
-    if (started && text) {
-       rapportScene.modules.tts.sendText(text)
-      // rapportScene.modules.tts.sendText(text);
+async function send_text(text) {
+    if (enableTTS && text) {
+        rapportScene.modules.tts.sendText(text)
     } else {
-      console.error("Not started or no text");
+        console.error("Not started or no text");
     }
-  }
+}
 
-  function getTextUpdater() {
-      $.ajax({
-          url: '/get_text',
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-              var text_content = data.text_content
-
-              if (text_content === "") {
-                console.log("No text");
-              } else {
+function getTextUpdater() {
+    $.ajax({
+        url: '/get_information',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            const text_content = data.text_content;
+            if (text_content !== "") {
                 send_text(text_content)
                 console.log("Popped text:", text_content);
-              }
-              // 定时调用
-              setTimeout(getTextUpdater, 100);
-          }
-      });
-  }
+            }
+
+            const command = data.command;
+            if (command !== "") {
+                rapportScene.modules.commands.stopAllSpeech();
+                console.log("Stopped!!!");
+            }
+            // 定时调用
+            textUpdater = setTimeout(getTextUpdater, 100);
+        }
+    });
+}
+
+rapportScene.addEventListener('ttsStart', (e) => {
+    $.ajax({
+        url: '/tts_start',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log("tts_disabled");
+        }
+    });
+});
 
 
-    function enable_speak() {
-      $.ajax({
-          url: '/enable_tts',
-          type: 'GET',
-          dataType: 'json',
-          success: function (data) {
-              console.log("enabled");
-          }
-      });
-  }
+rapportScene.addEventListener('ttsEnd', (e) => {
+    $.ajax({
+        url: '/tts_end',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log("tts_enabled");
+        }
+    });
+});
+
+function connect_flask() {
+    $.ajax({
+        url: '/tts_end',
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log("tts_enabled");
+        }
+    });
+}
+
+function cancelTextUpdater() {
+    clearTimeout(textUpdater);
+}

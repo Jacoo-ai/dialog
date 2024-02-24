@@ -1,0 +1,8 @@
+{
+  "name": "dialog",
+  "version": "1.0.0",
+  "dependencies": {
+    "@deepgram/sdk": "^3.1.9",
+    "cross-fetch": "^4.0.0"
+  }
+}

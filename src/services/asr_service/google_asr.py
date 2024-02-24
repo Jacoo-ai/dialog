@@ -30,6 +30,6 @@ def record_and_recognize(duration=5):
         return 'could not request results from google' + str(e)
 
 
-# if __name__ == '__main__':
-#     result = record_and_recognize()
-#     print(result)
+if __name__ == '__main__':
+    result = record_and_recognize()
+    print(result)

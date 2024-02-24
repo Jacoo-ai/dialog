@@ -10,19 +10,28 @@
   <!-- Load Rapport Web Viewer. -->
   <script src="https://cdn.rapport.cloud/rapport-web-viewer/rapport.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@deepgram/sdk"></script>
 </head>
 
 <body>
   <button id="demoButton">Start Demo</button>
   <button id="endButton">End Demo</button>
+  <br>
+  <br>
+  <button id="openMicrophoneButton">Open Microphone</button>
+  <button id="closeMicrophoneButton">Close Microphone</button>
 
   <div>
     <rapport-scene id="rapportScene" background-color="transparent" loading-image=""
       style="width: 600px; height: 600px;"></rapport-scene>
   </div>
+  <div class="captions" id="captions">
+      <span>Captions by Deepgram</span>
+  </div>
 
 </body>
 <script src="../static/js/tts.js"></script>
-<script>getTextUpdater()</script>
+<script src="../static/js/microphone.js"></script>
+<script src="../static/js/asr.js"></script>
 
 </html>

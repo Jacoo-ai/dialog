@@ -1,5 +1,4 @@
 import logging
-from queue import Queue
 from threading import Condition
 
 from flask import Flask, render_template, request, jsonify
@@ -8,12 +7,18 @@ import os
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.WARNING)
 
-app = Flask(__name__)
-text_queue = Queue()
-tts_enable = False
-asr_enable = False
 
-condition = Condition()
+class FlaskState:
+    def __init__(self):
+        self.tts_text_content = ""
+        self.asr_text_content = ""
+        self.command = ""
+        self.tts_enable = False
+        self.condition = Condition()
+
+
+state = FlaskState()
+app = Flask(__name__)
 
 
 @app.route('/')
@@ -21,60 +26,44 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/send_text', methods=['POST', 'GET'])
-def send_text():
-    data = __request_parse(request)
-    text = data.get('text_content')
+@app.route('/get_information', methods=['POST', 'GET'])
+def get_information():
+    command_str = state.command
+    state.command = ""
+    if state.tts_text_content != "" and state.tts_enable:
+        disable_tts()
+        return jsonify(text_content=state.tts_text_content, command=command_str)
 
-    text_queue.put(text)
-    return "success"
-
-
-@app.route('/get_text', methods=['GET'])
-def get_text():
-    if text_queue.empty() or not tts_enable:
-        return jsonify(text_content="")
-    return jsonify(text_content=text_queue.get())
+    return jsonify(text_content="", command=command_str)
 
 
-@app.route('/enable_tts', methods=['GET'])
+@app.route('/tts_end', methods=['POST', 'GET'])
 def enable_tts():
-    global tts_enable
+    state.tts_enable = True
+    state.tts_text_content = ""
 
-    tts_enable = True
-    with condition:
-        condition.notify_all()
-    return "tts_enabled"
-
-
-@app.route('/disable_tts', methods=['GET'])
-def disable_tts():
-    global tts_enable
-
-    tts_enable = False
-    with condition:
-        condition.notify_all()
-    return "tts_disabled"
-
-
-@app.route('/tts_end', methods=['GET'])
-def enable_asr():
-    global asr_enable
-
-    asr_enable = True
-    with condition:
-        condition.notify_all()
     return 'asr_enabled'
 
 
-@app.route('/tts_start', methods=['GET'])
-def disable_asr():
-    global asr_enable
+@app.route('/tts_start', methods=['POST', 'GET'])
+def disable_tts():
+    state.tts_enable = False
 
-    asr_enable = False
-    with condition:
-        condition.notify_all()
     return 'asr_disabled'
+
+
+@app.route('/asr_text', methods=['POST', 'GET'])
+def get_text_from_asr():
+    data = __request_parse(request)
+    state.asr_text_content = data.get('text_content')
+
+    with state.condition:
+        state.condition.notify_all()
+    return "success"
+
+
+def stop_tts():
+    state.command = "stop"
 
 
 def __request_parse(req_data):
@@ -86,18 +75,18 @@ def __request_parse(req_data):
 
 
 def flask_server_start(port=5000):
+    print("flask server started at: 127.0.0.1:" + str(port) + "...")
     app.config['SECRET_KEY'] = os.urandom(24)
     app.run(debug=False, port=port)
-    print("flask server started at: 127.0.0.1:" + str(port) + "...")
 
 
-def get_speak_state():
-    return asr_enable and tts_enable
-
-
-def get_speak_start_state():
-    return not asr_enable
-    # return True if not asr_enable else False
+def wait_for_asr_text():
+    with state.condition:
+        if state.asr_text_content == "":
+            state.condition.wait()
+    text_content = state.asr_text_content
+    state.asr_text_content = ""
+    return text_content
 
 
 if __name__ == '__main__':

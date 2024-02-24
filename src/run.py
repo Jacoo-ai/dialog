@@ -1,82 +1,50 @@
 from threading import Thread
 
-import requests
 from services.flask_service import app as flask_server
 from services.rasa_service.rasa_service import rasa_service as rasa_server
-from services.asr_service import google_asr as asr_server
+import services.text_service.text_service as text_server
 
 
-def send_text(text):
-    json_data = {'text_content': text}
-    response = requests.post("http://127.0.0.1:5000/send_text", json=json_data)
+def process_sentences():
+    is_stop = False
+    stop_state = False
 
-    print("# ==================================== #")
-    print(text)
-    print()
-
-
-def enable_speak():
-    requests.get("http://127.0.0.1:5000/enable_speak")
-    print("speak enabled")
-
-
-def disable_speak():
-    requests.get("http://127.0.0.1:5000/disable_speak")
-    print("speak enabled")
-
-
-def wait_speak_enable():
-    with flask_server.condition:
-        while not flask_server.get_speak_state():
-            flask_server.condition.wait()
-    # while not flask_server.get_speak_state():
-    #     pass
-
-
-def wait_speak_start():
-    with flask_server.condition:
-        while not flask_server.get_speak_start_state():
-            flask_server.condition.wait()
-    # while not flask_server.get_speak_start_state():
-    #     pass
-
-
-def ask_and_response():
-    wait_speak_enable()
-    user_text = asr_server.record_and_recognize()
-    # user_text = input("input request")
-
-    read_text = rasa_server.wait_for_response(user_text)
-    send_text(read_text)
-    wait_speak_start()
-    # time.sleep(5)
-
-
-def rasa_story_1():
-    """
-        > Can you introduce yourself?
-        > Please begin the lesson.
-        > Could you clarify at what altitude it's hard to breathe?
-        > Please continue.
-        > How long did it take him to climb Everest?
-        > Please continue.
-    """
     while True:
-        ask_and_response()
-    # ask_and_response("Can you introduce yourself")
-    # ask_and_response("Please begin the lesson")
-    # ask_and_response("Could you clarify at what altitude it's hard to breathe")
-    # ask_and_response("Please continue")
-    # ask_and_response("How long did it take him to climb Everest")
-    # ask_and_response("Please continue")
+        asr_text_content = flask_server.wait_for_asr_text()
+        rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
+        print("==========================================================================================   1")
+        print(asr_text_content)
+        print()
+        if stop_state or (not flask_server.state.tts_enable):
+            # disable for inserting new answer into tts_text_content
+            flask_server.disable_tts()
+            flask_server.stop_tts()
+            text_server.push_stop_information()
+            is_stop = True
+
+        # 非询问打断，后续直接退出打断状态
+        if "stop" in asr_text_content.lower(): # 这句话替换为rasa对于intent: stop的输出
+            flask_server.state.tts_text_content = "Ok, What's your questions?"
+            stop_state = False
+
+        # 插入回答语句
+        text_server.push_paragraph(rasa_text_content)
+
+        # recover tts_enable from breakpoint
+        if is_stop:
+            flask_server.enable_tts()
+            is_stop = False
 
 
-def run_flask():
+
+
+
+def run_text_server():
+    text_server.translate_data_start(flask_server.state, 0.32)
+
+
+def run_flask_server():
     flask_server.flask_server_start(port=5000)
-
-
-def run_rasa():
-    rasa_story_1()
 
 
 def run_rasa_action_server():
@@ -84,14 +52,17 @@ def run_rasa_action_server():
 
 
 if __name__ == "__main__":
-    flask_thread = Thread(target=run_flask)
-    rasa_action_thread = Thread(target=run_rasa_action_server())
-    rasa_thread = Thread(target=run_rasa)
+    flask_thread = Thread(target=run_flask_server)
+    rasa_action_thread = Thread(target=run_rasa_action_server)
+    process_sentences_thread = Thread(target=process_sentences)
+    text_server_thread = Thread(target=run_text_server)
 
-    flask_thread.start()
     rasa_action_thread.start()
-    rasa_thread.start()
+    flask_thread.start()
+    process_sentences_thread.start()
+    text_server_thread.start()
 
-    rasa_thread.join()
+    process_sentences_thread.join()
     rasa_action_thread.join()
     flask_thread.join()
+    text_server_thread.join()
