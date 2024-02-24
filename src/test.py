@@ -3,12 +3,8 @@
 import time
 
 import nltk
-text = "hello"
-
-
 
 if __name__ == "__main__":
 
-    print(text)
-    # nltk.download('punkt')
+    nltk.download('punkt')
     # flask_server.flask_server_start(port=5000)

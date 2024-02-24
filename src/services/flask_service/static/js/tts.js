@@ -66,6 +66,7 @@ function getTextUpdater() {
             if (command !== "") {
                 rapportScene.modules.commands.stopAllSpeech();
                 console.log("Stopped!!!");
+                send_text("Ok, What's your questions?")
             }
             // 定时调用
             textUpdater = setTimeout(getTextUpdater, 100);
@@ -96,13 +97,13 @@ rapportScene.addEventListener('ttsEnd', (e) => {
     });
 });
 
-function connect_flask() {
+function disable_tts() {
     $.ajax({
-        url: '/tts_end',
+        url: '/tts_start',
         type: 'GET',
         dataType: 'json',
         success: function (data) {
-            console.log("tts_enabled");
+            console.log("tts_disabled");
         }
     });
 }

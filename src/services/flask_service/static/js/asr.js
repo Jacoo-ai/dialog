@@ -14,6 +14,13 @@ openMicrophoneButton.addEventListener("click", async () => {
   }
 });
 
+async function openMicrophone_helper() {
+  if (!microphone && asrStarted) {
+    microphone = await getMicrophone();
+    await openMicrophone(microphone, socket);
+  }
+}
+
 closeMicrophoneButton.addEventListener("click", async () => {
 
   if (microphone) {
@@ -31,13 +38,13 @@ window.addEventListener("load", async () => {
   socket = _deepgram.listen.live({
     model: "nova-2",
     smart_format: true,
-    // utterance_end_ms: 2000,
-    // interim_results: true,
+    endpointing: 400,
   });
 
   socket.on("open", async () => {
     asrStarted = true;
     console.log("client: connected to websocket");
+    await openMicrophone_helper()
 
     socket.on("Results", (data) => {
       // console.log(data);
