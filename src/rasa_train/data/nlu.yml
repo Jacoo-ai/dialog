@@ -1,7 +1,8 @@
 version: "3.1"
 nlu:
-- intent: introduce_agent
+- intent: greet_guest_teacher
   examples: |
+    - Hello, I'm glad to meet you.
     - Can you introduce yourself?
     - Tell us about you.
     - Who are you?
@@ -18,112 +19,61 @@ nlu:
     - Hey there, how's it going?
     - Hi, what's your name?
 
-- intent: start_lesson
+- intent: ask_about_previous_studies
   examples: |
-    - Please begin the lesson.
-    - Start telling the story.
-    - Let's start with today's lesson.
-    - Can we start the lesson now?
-    - I'm ready for the lesson, can we begin?
-    - Initiate today's learning, please.
-    - Let's get the lesson started.
-    - Shall we dive into today's topic?
-    - Begin the lesson, please.
-    - Time to start learning, right?
-    - Let's kick off today's lesson.
-    - Ready to start, please proceed.
-    - Can we start the class now?
-    - I'm ready for the lesson, can we start?
-- intent: ask_for_clarification
+    - do you mean that this is not the first study to suggest that life existed on Mars in the past?
+    - Is it correct to say that this study is not the first to propose the existence of past life on Mars?
+    - Are you implying that there have been previous studies suggesting that life once existed on Mars?
+    - Are you saying that this study confirms previous findings?
+    - Can you confirm that this study is not the first to suggest life on Mars?
+    - Is it true that this study confirms earlier findings?
+    - Are you saying that this study confirms previous findings?
+
+- intent: clarify_organic_molecules
   examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
-- intent: request_continuation
+    - Why is the presence of organic molecules not enough evidence for ancient life on Mars?
+    - What reasons do scientists give for why the discovery of organic molecules on Mars is not considered definitive evidence of ancient life?
+    - Could you explain why the mere presence of organic molecules is not considered conclusive proof of past life on Mars?
+    - Why do scientists say that the presence of organic molecules is not sufficient evidence for ancient life on Mars?
+    - Can you explain why the presence of organic molecules is not enough to prove ancient life on Mars?
+    - What are the reasons for why the presence of organic molecules is not considered definitive evidence of ancient life on Mars?
+    - Why is the presence of organic molecules not enough to confirm ancient life on Mars?
+
+- intent: inquire_about_methane_lifespan
   examples: |
-    - Please continue.
-    - Go on with the story.
-    - Keep going, what happens next?
-    - Can you proceed with the lesson?
-    - Continue the story, please.
-    - What comes after that?
-    - Keep telling the story.
-    - Don't stop now, what's next?
-    - Please keep going with the lesson.
-    - I'm eager to hear more, continue please.
-    - What follows in the story?
-    - Carry on with the explanation.
-- intent: inquire_about_duration
+    - How long dose methane lives?
+    - What is the duration of methane lifespan?
+    - How long does methane typically last?
+    - What is the lifespan of methane?
+    - How long does methane survive?
+    - What is the average lifespan of methane?
+    - How long does methane usually last?
+
+- intent: discuss_mars_seasons
   examples: |
-    - How long did it take him to climb Everest?
-    - What was the duration of Kilian's first and second ascents?
-    - Can you tell us about the time it took for the climbs?
-    - How much time was needed for each Everest climb?
-    - What's the time frame for his Everest ascents?
-    - How long were Kilian's Everest expeditions?
-    - Duration of Kilian's climbs, please?
-    - Can you detail the time it took Kilian to summit Everest?
-    - How long did each Everest ascent take?
-    - Tell me the climbing duration for Kilian.
-    - What are the timings for his Everest achievements?
-    - How much time did Kilian spend climbing Everest?
-- intent: ask_about_identity_change
+    - I think Mars can be said to have a winter and a summer. Cause the level of methane rises and falls at seasonal intervals in the year.
+    - Mars has seasons, right? 
+    - Mars has seasons, doesn't it?
+    - Mars has seasons, correct?
+    - The variations in temperature on the surface of Mars cause the molecule to flow upwards at higher or lower levels.
+    - Cause the level of methane rises and falls at seasonal intervals in the year.
+    
+
+- intent: ask_about_future_expeditions
   examples: |
-    - What changed for him at 13 and again at 18?
-    - Can you explain the key changes in his life at those ages?
-    - What were the turning points at ages 13 and 18?
-    - How did his life alter at 13 and 18?
-    - What significant changes occurred when he was 13 and 18?
-    - Can you detail the milestones at 13 and 18 years old?
-    - What life events marked his 13th and 18th years?
-    - Describe the transformations at ages 13 and 18.
-    - What shifts happened in his career at 13 and 18?
-    - The changes at 13 and 18, can you expand on those?
-    - What were the pivotal moments at 13 and 18 in his life?
-    - How did Kilian's direction change at 13 and 18?
-- intent: ask_about_physical_condition
+    - How many more scientific expeditions are heading to Mars?
+    - How many further scientific expeditions are scheduled for Mars exploration?
+    - Are there any other scientific expeditions planned for Mars in the near future?
+    - Are there any more scientific expeditions heading to Mars?
+    - How many more scientific expeditions are planned for Mars?
+    - Are there any further scientific expeditions scheduled for Mars exploration?
+    - How many more scientific expeditions are there for Mars exploration?
+
+- intent: discuss_mars_life
   examples: |
-    - How does he maintain such a great physical condition?
-    - What makes Kilian's physical condition so remarkable?
-    - Can you tell us about his training regime?
-    - What's the secret to Kilian's fitness?
-    - How does Kilian stay in top shape?
-    - Can you explain his physical training and diet?
-    - What does Kilian do to keep fit?
-    - How does Kilian prepare physically for challenges?
-    - Details on Kilian's workout routine, please?
-    - What contributes to Kilian's peak physical condition?
-    - How does he manage his physical health so well?
-    - What are the specifics of his training schedule?
-- intent: conclude_lesson
-  examples: |
-    - Wow, that was incredible! 
-    - Thanks a ton for sharing all that. 
-    - I bet everyone's got a lot to think about now. 
-    - Any questions you want to ask the class?
-    - Thanks a million to our guest and all of you for being such a great audience. 
-    - That's a wrap for today's class. Catch you all next time!"
-    - That was an amazing lesson, thank you.
-    - This concludes our lesson, right?
-    - Wow, what a story! Is that all for today?
-    - Thanks for the lesson, is it over now?
-    - Do we wrap up here?
-    - Is this the end of today's learning?
-    - Great story, are we done for the day?
-    - Was that the conclusion of our lesson?
-    - Have we reached the end of today's topic?
-    - Is there anything else, or is that it?
-    - That's all for today's lesson, correct?
-    - Are we concluding the lesson now?
+    - There is no direct evidence of life on Mars.
+    - I think the real situation needs more scientific exploration to prove.
+    - I think the possibility of life on Mars is still a mystery.
 
 - intent: ask_for_repetition
   examples: |

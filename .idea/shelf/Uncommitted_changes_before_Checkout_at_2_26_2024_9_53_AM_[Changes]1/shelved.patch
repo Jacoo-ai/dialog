@@ -1,0 +1,60 @@
+Index: src/services/rasa_service/rasa_service.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import subprocess\r\nfrom rasa.model import get_local_model\r\nfrom rasa.core.agent import Agent\r\n\r\nimport asyncio\r\n\r\n\r\nclass Rasa:\r\n    def __init__(self, file_path):\r\n        self.__model_path = get_local_model(file_path)\r\n        self.__agent = Agent.load(self.__model_path)\r\n\r\n    async def __parse_message(self, text):\r\n        response = await self.__agent.handle_text(text)\r\n        if len(response) == 0:\r\n            return \"No response got from rasa\"\r\n        return response[0]['text']\r\n\r\n    def change_model(self, model_path):\r\n        self.__model_path = model_path\r\n        self.__agent = Agent.load(self.__model_path)\r\n\r\n    def wait_for_response(self, text):\r\n        text = asyncio.run(self.__parse_message(text))\r\n        return text\r\n\r\n    @staticmethod\r\n    def start_rasa_actions():\r\n        try:\r\n            subprocess.Popen([\"rasa\", \"run\", \"actions\"], cwd=\"rasa_train\")\r\n            print(\"rasa action server started...\")\r\n        except Exception as e:\r\n            print(f\"rasa action server error: {e}\")\r\n\r\n\r\nmodel_path = \"rasa_train/models/20240212-023241-scared-search.tar.gz\"\r\nrasa_service = Rasa(model_path)\r\nprint(\"rasa server started...\")\r\n\r\n# if __name__ == '__main__':\r\n#     model_path = \"../../rasa_train/models/20240212-001803-obsolete-rent.tar.gz\"\r\n#     rasa_service = Rasa(model_path)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/services/rasa_service/rasa_service.py b/src/services/rasa_service/rasa_service.py
+--- a/src/services/rasa_service/rasa_service.py	
++++ b/src/services/rasa_service/rasa_service.py	
+@@ -1,10 +1,8 @@
+ import subprocess
+ from rasa.model import get_local_model
+ from rasa.core.agent import Agent
+-
+ import asyncio
+ 
+-
+ class Rasa:
+     def __init__(self, file_path):
+         self.__model_path = get_local_model(file_path)
+Index: src/services/flask_service/app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import logging\r\nfrom queue import Queue\r\nfrom threading import Condition\r\n\r\nfrom flask import Flask, render_template, request, jsonify\r\nimport os\r\n\r\nlog = logging.getLogger('werkzeug')\r\nlog.setLevel(logging.WARNING)\r\n\r\napp = Flask(__name__)\r\ntext_queue = Queue()\r\ntts_enable = False\r\nasr_enable = False\r\n\r\ncondition = Condition()\r\n\r\n\r\n@app.route('/')\r\ndef index():\r\n    return render_template('index.html')\r\n\r\n\r\n@app.route('/send_text', methods=['POST', 'GET'])\r\ndef send_text():\r\n    data = __request_parse(request)\r\n    text = data.get('text_content')\r\n\r\n    text_queue.put(text)\r\n    return \"success\"\r\n\r\n\r\n@app.route('/get_text', methods=['GET'])\r\ndef get_text():\r\n    if text_queue.empty() or not tts_enable:\r\n        return jsonify(text_content=\"\")\r\n    return jsonify(text_content=text_queue.get())\r\n\r\n\r\n@app.route('/enable_tts', methods=['GET'])\r\ndef enable_tts():\r\n    global tts_enable\r\n\r\n    tts_enable = True\r\n    with condition:\r\n        condition.notify_all()\r\n    return \"tts_enabled\"\r\n\r\n\r\n@app.route('/disable_tts', methods=['GET'])\r\ndef disable_tts():\r\n    global tts_enable\r\n\r\n    tts_enable = False\r\n    with condition:\r\n        condition.notify_all()\r\n    return \"tts_disabled\"\r\n\r\n\r\n@app.route('/tts_end', methods=['GET'])\r\ndef enable_asr():\r\n    global asr_enable\r\n\r\n    asr_enable = True\r\n    with condition:\r\n        condition.notify_all()\r\n    return 'asr_enabled'\r\n\r\n\r\n@app.route('/tts_start', methods=['GET'])\r\ndef disable_asr():\r\n    global asr_enable\r\n\r\n    asr_enable = False\r\n    with condition:\r\n        condition.notify_all()\r\n    return 'asr_disabled'\r\n\r\n\r\ndef __request_parse(req_data):\r\n    if req_data.method == 'POST':\r\n        data = req_data.json\r\n    elif req_data.method == 'GET':\r\n        data = req_data.args\r\n    return data\r\n\r\n\r\ndef flask_server_start(port=5000):\r\n    app.config['SECRET_KEY'] = os.urandom(24)\r\n    app.run(debug=False, port=port)\r\n    print(\"flask server started at: 127.0.0.1:\" + str(port) + \"...\")\r\n\r\n\r\ndef get_speak_state():\r\n    return asr_enable and tts_enable\r\n\r\n\r\ndef get_speak_start_state():\r\n    return not asr_enable\r\n    # return True if not asr_enable else False\r\n\r\n\r\nif __name__ == '__main__':\r\n    flask_server_start()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/services/flask_service/app.py b/src/services/flask_service/app.py
+--- a/src/services/flask_service/app.py	
++++ b/src/services/flask_service/app.py	
+@@ -101,4 +101,5 @@
+ 
+ 
+ if __name__ == '__main__':
++    #app.run(debug=True)
+     flask_server_start()
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9 (dialog)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,4 +1,10 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (dialog)" project-jdk-type="Python SDK" />
++  <component name="Black">
++    <option name="sdkName" value="Python 3.9 (dialog1)" />
++  </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (dialog1)" project-jdk-type="Python SDK" />
++  <component name="PyCharmProfessionalAdvertiser">
++    <option name="shown" value="true" />
++  </component>
+ </project>
+\ No newline at end of file

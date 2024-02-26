@@ -1,0 +1,17 @@
+Index: .idea/dialog.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp6crpli8t\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp9_11pjco\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmp9g17jiq1\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmph9zss91t\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpowpqbyak\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppggy03qp\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppm81ltih\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmppsgcuy53\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpq5pabera\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsgp5mmn6\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsnzpbpo2\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpsvbaczaz\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpv_oomqqk\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpwwi9d8m9\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpx0vczdcd\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpxyj8vogk\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpy1jmh07k\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpyszzzq7z\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/venv\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n  <component name=\"PyDocumentationSettings\">\r\n    <option name=\"format\" value=\"PLAIN\" />\r\n    <option name=\"myDocStringFormat\" value=\"Plain\" />\r\n  </component>\r\n  <component name=\"TemplatesService\">\r\n    <option name=\"TEMPLATE_FOLDERS\">\r\n      <list>\r\n        <option value=\"$MODULE_DIR$/src/services/flask_service/templates\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n</module>
+===================================================================
+diff --git a/.idea/dialog.iml b/.idea/dialog.iml
+--- a/.idea/dialog.iml	
++++ b/.idea/dialog.iml	
+@@ -22,7 +22,7 @@
+       <excludeFolder url="file://$MODULE_DIR$/src/rasa_train/.rasa/cache/tmpyszzzq7z" />
+       <excludeFolder url="file://$MODULE_DIR$/venv" />
+     </content>
+-    <orderEntry type="inheritedJdk" />
++    <orderEntry type="jdk" jdkName="Python 3.9 (dialog1)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+   <component name="PyDocumentationSettings">
