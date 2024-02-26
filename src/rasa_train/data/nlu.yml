@@ -18,112 +18,79 @@ nlu:
     - Hey there, how's it going?
     - Hi, what's your name?
 
-- intent: start_lesson
+- intent: answer_business_etiquette
   examples: |
-    - Please begin the lesson.
-    - Start telling the story.
-    - Let's start with today's lesson.
-    - Can we start the lesson now?
-    - I'm ready for the lesson, can we begin?
-    - Initiate today's learning, please.
-    - Let's get the lesson started.
-    - Shall we dive into today's topic?
-    - Begin the lesson, please.
-    - Time to start learning, right?
-    - Let's kick off today's lesson.
-    - Ready to start, please proceed.
-    - Can we start the class now?
-    - I'm ready for the lesson, can we start?
-- intent: ask_for_clarification
+    - Business etiquette is key in building trust.
+    - Understanding business etiquette is crucial.
+    - Business etiquette is important in international business.
+    - Business etiquette can make or break a deal.
+    - Respect is crucial in international negotiations.
+    - Business etiquette can affect international business.
+    - Trust is built on business etiquette.
+    - A good first impression is important in business.
+    - Different countries have unique business customs.
+    Knowing etiquette helps in international business.
+    - Using knowledge of business etiquette in different countries can build trust, respect and a positive first impression in international business negotiations
+- intent: preference_question
   examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
-- intent: request_continuation
+    - How do many Continental Europeans and Latin Americans prefer to be addressed when meeting someone in a business context for the first time?
+    - What is the preferred form of address for many Continental Europeans and Latin Americans in initial business meetings?
+    - How do people from Continental Europe and Latin America like to be addressed during a first business encounter?
+    - What addressing style do Continental Europeans and Latin Americans favor in first-time business interactions?
+    - What is the preferred form of address for many Continental Europeans and Latin Americans in initial business meetings?
+    - How do people from Continental Europe and Latin America like to be addressed during a first business encounter?
+    - What addressing style do Continental Europeans and Latin Americans favor in first-time business interactions?
+
+- intent: ask_about_smiling_proverb
   examples: |
-    - Please continue.
-    - Go on with the story.
-    - Keep going, what happens next?
-    - Can you proceed with the lesson?
-    - Continue the story, please.
-    - What comes after that?
-    - Keep telling the story.
-    - Don't stop now, what's next?
-    - Please keep going with the lesson.
-    - I'm eager to hear more, continue please.
-    - What follows in the story?
-    - Carry on with the explanation.
-- intent: inquire_about_duration
+    - I'm curious about What is the Russian proverb mentioned in the article that relates to smiling?
+    - Which Russian proverb related to smiling is cited in the text?
+    - What is the mentioned Russian adage that pertains to smiling?
+    - What is the Russian proverb about smiling?
+    - Can you tell me the Russian proverb about smiling?
+    - What is the Russian saying about smiling?
+
+- intent: ask_about_smiling_intelligence
   examples: |
-    - How long did it take him to climb Everest?
-    - What was the duration of Kilian's first and second ascents?
-    - Can you tell us about the time it took for the climbs?
-    - How much time was needed for each Everest climb?
-    - What's the time frame for his Everest ascents?
-    - How long were Kilian's Everest expeditions?
-    - Duration of Kilian's climbs, please?
-    - Can you detail the time it took Kilian to summit Everest?
-    - How long did each Everest ascent take?
-    - Tell me the climbing duration for Kilian.
-    - What are the timings for his Everest achievements?
-    - How much time did Kilian spend climbing Everest?
-- intent: ask_about_identity_change
+    - which countries were smiling individuals considered more intelligent?
+    - In which countries were smiling people seen as more intelligent?
+    - Where were smiling individuals rated as more intelligent?
+    - In which countries were smiling people considered more intelligent?
+    - In which countries is smiling associated with higher intelligence?
+    - Where were smiling individuals seen as more intelligent?
+    - Where is people who smile perceived as more intelligent?
+    - In which countries were smiling individuals considered more intelligent?
+    - Where were smiling individuals rated as more intelligent?
+    - In which countries were smiling people considered more intelligent?
+
+- intent: ask_about_eye_contact
   examples: |
-    - What changed for him at 13 and again at 18?
-    - Can you explain the key changes in his life at those ages?
-    - What were the turning points at ages 13 and 18?
-    - How did his life alter at 13 and 18?
-    - What significant changes occurred when he was 13 and 18?
-    - Can you detail the milestones at 13 and 18 years old?
-    - What life events marked his 13th and 18th years?
-    - Describe the transformations at ages 13 and 18.
-    - What shifts happened in his career at 13 and 18?
-    - The changes at 13 and 18, can you expand on those?
-    - What were the pivotal moments at 13 and 18 in his life?
-    - How did Kilian's direction change at 13 and 18?
-- intent: ask_about_physical_condition
+    - could you clarify How is direct eye contact perceived in Japan or Korea? 
+    - How is direct eye contact seen in Japan or Korea?
+    - What is the perception of direct eye contact in Japan or Korea?
+    - How is direct eye contact viewed in Japan or Korea?
+    - How do people in Japan or Korea view direct eye contact?
+    - How is making direct eye contact regarded in Japan or Korea?
+    - In Japan or Korea, what are the cultural attitudes towards direct eye contact?
+    - What does direct eye contact signify in Japanese and Korean cultures?
+    - How is direct eye contact perceived in Japan or Korea?
+
+- intent: ask_about_communication_barriers
   examples: |
-    - How does he maintain such a great physical condition?
-    - What makes Kilian's physical condition so remarkable?
-    - Can you tell us about his training regime?
-    - What's the secret to Kilian's fitness?
-    - How does Kilian stay in top shape?
-    - Can you explain his physical training and diet?
-    - What does Kilian do to keep fit?
-    - How does Kilian prepare physically for challenges?
-    - Details on Kilian's workout routine, please?
-    - What contributes to Kilian's peak physical condition?
-    - How does he manage his physical health so well?
-    - What are the specifics of his training schedule?
-- intent: conclude_lesson
-  examples: |
-    - Wow, that was incredible! 
-    - Thanks a ton for sharing all that. 
-    - I bet everyone's got a lot to think about now. 
-    - Any questions you want to ask the class?
-    - Thanks a million to our guest and all of you for being such a great audience. 
-    - That's a wrap for today's class. Catch you all next time!"
-    - That was an amazing lesson, thank you.
-    - This concludes our lesson, right?
-    - Wow, what a story! Is that all for today?
-    - Thanks for the lesson, is it over now?
-    - Do we wrap up here?
-    - Is this the end of today's learning?
-    - Great story, are we done for the day?
-    - Was that the conclusion of our lesson?
-    - Have we reached the end of today's topic?
-    - Is there anything else, or is that it?
-    - That's all for today's lesson, correct?
-    - Are we concluding the lesson now?
+    - In communication, it's important to keep an open mind.
+    - Cultural stereotypes can be detrimental to building good business relationships.
+    - We are influenced by many factors, not just our national culture.
+    - It's important to remember that cultural stereotypes can be harmful.
+    - We should avoid pigeonholing individuals based on their national culture.
+    - We are influenced by many factors, not just our national culture.
+    - We should avoid pigeonholing individuals based on their national culture.
+    - Ask about preferences if you're unsure.
+    - It's important to be aware of the differences in expectations and behaviour.
+    - We should avoid pigeonholing individuals based on their national culture.
+    - Communicate intentions and needs clearly.
+    - It's important to be aware of the differences in expectations and behaviour.
+    - Always be polite in your communication.
+    - Use concise and clear language.
 
 - intent: ask_for_repetition
   examples: |

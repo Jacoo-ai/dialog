@@ -1,13 +1,12 @@
 version: "3.0"
 intents:
   - introduce_agent
-  - start_lesson
-  - ask_for_clarification
-  - request_continuation
-  - inquire_about_duration
-  - ask_about_identity_change
-  - ask_about_physical_condition
-  - conclude_lesson
+  - answer_business_etiquette
+  - preference_question
+  - ask_about_smiling_proverb
+  - ask_about_smiling_intelligence
+  - ask_about_eye_contact
+  - ask_about_communication_barriers
   - ask_for_repetition
   - thank_teacher
   - express_interest
@@ -15,27 +14,19 @@ intents:
 
 responses:
   utter_introduce_agent:
-    - text: "I'm doing great, thanks! I'm really excited to be here and share with you all."
-  utter_start_lesson:
-    - text: "When you picture mountain climbers scaling Mount Everest, what probably comes to mind are teams of climbers with Sherpa guides leading them to the summit, equipped with oxygen masks, supplies and tents. And in most cases you'd be right, as 97 per cent of climbers use oxygen to ascend to Everest's summit at 8,850 metres above sea level. The thin air at high altitudes makes most people breathless at 3,500 metres, and the vast majority of climbers use oxygen past 7,000 metres. A typical climbing group will have 8–15 people in it, with an almost equal number of guides, and they'll spend weeks to get to the top after reaching Base Camp."
-  utter_ask_for_clarification_response:
-    - text: "At 3500 metres, most people find it hard to breath."
-  utter_first_breakpoint_continuation:
-    - text: "Before we continue, I'd like you to consider these questions: What are your thoughts on the sport?          You can answer these questions later. But ultra-distance and mountain runner Kilian Jornet Burgada ascended the mountain in May 2017 alone, without an oxygen mask or fixed ropes for climbing. Oh, and he did it in 26 hours. With food poisoning. And then, five days later, he did it again, this time in only 17 hours."
-  utter_inquire_about_duration_response:
-    - text: "The first one took 26 hours and the second one took 17 hours."
-  utter_second_breakpoint_continuation:
-    - text: "Born in 1987, Kilian has been training for Everest his whole life. And that really does mean his whole life, as he grew up 2,000 metres above sea level in the Pyrenees in the ski resort of Lles de Cerdanya in Catalonia, north-eastern Spain. While other children his age were learning to walk, Kilian was on skis. At one and a half years old he did a five-hour hike with his mother, entirely under his own steam. He left his peers even further behind when he climbed his first mountain and competed in his first cross-country ski race at age three. By age seven, he had scaled a 4,000er and, at ten, he did a 42-day crossing of the Pyrenees. He was 13 when he says he started to take it 'seriously' and trained with the Ski Mountaineering Technical Centre (CTEMC) in Catalonia, entering competitions and working with a coach. At 18, he took over his own ski-mountaineering and trail-running training, with a schedule that only allows a couple of weeks of rest a year."
-  utter_ask_about_identity_change_response:
-    - text: "He became a professional mountaineer at 13 and became his own ski-mountaineering and trail-running trainer at 18."
-  utter_third_breakpoint_continuation:
-    - text: "He does as many as 1,140 hours of endurance training a year, plus strength training and technical workouts as well as specific training in the week before a race. For his record-breaking ascent and descent of the Matterhorn, he prepared by climbing the mountain ten times until he knew every detail of it, even including where the sun would be shining at every part of the day. Sleeping only seven hours a night, Kilian Jornet seems almost superhuman. His resting heartbeat is extremely low at 33 beats per minute, compared with the average man's 60 per minute or an athlete's 40 per minute. He breathes more efficiently than average people too, taking in more oxygen per breath, and he has a much faster recovery time after exercise as his body quickly breaks down lactic acid – the acid in muscles that causes pain after exercise. All this is thanks to his childhood in the mountains and to genetics, but it is his mental strength that sets him apart. He often sets himself challenges to see how long he can endure difficult conditions in order to truly understand what his body and mind can cope with. For example, he almost gave himself kidney failure after only drinking 3.5 litres of water on a 100km run in temperatures of around 40°C."
-  utter_ask_about_physical_condition_response:
-    - text: "All this is thanks to his childhood in the mountains and to genetics, but it is his mental strength that sets him apart."
-  utter_fourth_breakpoint_continuation:
-    - text: "It would take a book to list all the races and awards he's won and the mountains he's climbed. And even here, Kilian’s achievements exceed the average person as, somehow, he finds time to record his career on his blog and has written three books, Run or Die, The Invisible Border and Summits of My Life."
-  utter_conclude_lesson:
-    - text: "Yeah, actually, I've got a few things I'm curious about. The question for you guys is after knowing Kilian’s story, what can you learn from him?"
+    - text: "I'm great super happy to be here with you all ! Let's start.Much of today's business is conducted across international borders, and while the majority of the global business community might share the use of English as a common language, the nuances and expectations of business communication might differ greatly from culture to culture. A lack of understanding of the cultural norms and practices of our business acquaintances can result in unfair judgements, misunderstandings and breakdowns in communication. Here are three basic areas of differences in the business etiquette around the world that could help stand you in good stead when you next find yourself working with someone from a different culture. Before I continue to share,I want to aks you guys a question that  what do you think is the significance of understanding the differences in national business etiquette in different countries? "
+  utter_business_etiquette_info:
+    - text: "Nicely said! You've really thought this through. When discussing this topic in a training course, a German trainee and a British trainee got into a hot debate about whether it was appropriate for someone with a doctorate to use the corresponding title on their business card. The British trainee maintained that anyone who wasn't a medical doctor expecting to be addressed as 'Dr' was disgustingly pompous and full of themselves. The German trainee, however, argued that the hard work and years of education put into earning that PhD should give them full rights to expect to be addressed as 'Dr'. This stark difference in opinion over something that could be conceived as minor and thus easily overlooked goes to show that we often attach meaning to even the most mundane practices. When things that we are used to are done differently, it could spark the strongest reactions in us. While many Continental Europeans and Latin Americans prefer to be addressed with a title, for example Mr or Ms and their surname when meeting someone in a business context for the first time, Americans, and increasingly the British, now tend to prefer using their first names. The best thing to do is to listen and observe how your conversation partner addresses you and, if you are still unsure, do not be afraid to ask them how they would like to be addressed."
+  utter_preference_question_response:
+    - text: "They prefer to be addressed with a title, for example, Mr or Ms and their surname. A so-called 'smile of respect' is seen as insincere and often regarded with suspicion in Russia. A famous Russian proverb even states that 'laughing without reason is a sign of idiocy'. Yet in countries like the United States, Australia and Britain, smiling is often interpreted as a sign of openness, friendship and respect, and is frequently used to break the ice."
+  utter_smiling_proverb_info:
+    - text: "The Russian proverb is 'laughing without reason is a sign of idiocy'.In a piece of research done on smiles across cultures, the researchers found that smiling individuals were considered more intelligent than non-smiling people in countries such as Germany, Switzerland, China and Malaysia. However, in countries like Russia, Japan, South Korea and Iran, pictures of smiling faces were rated as less intelligent than the non-smiling ones. Meanwhile, in countries like India, Argentina and the Maldives, smiling was associated with dishonesty."
+  utter_smiling_intelligence_info:
+    - text: "Germany, Switzerland, China, and Malaysia.An American or British person might be looking their client in the eye to show that they are paying full attention to what is being said, but if that client is from Japan or Korea, they might find the direct eye contact awkward or even disrespectful. In parts of South America and Africa, prolonged eye contact could also be seen as challenging authority. In the Middle East, eye contact across genders is considered inappropriate, although eye contact within a gender could signify honesty and truthfulness."
+  utter_eye_contact_info:
+    - text: "Direct eye contact might be found awkward or even disrespectful.Having an increased awareness of the possible differences in expectations and behaviour can help us avoid cases of miscommunication, but it is vital that we also remember that cultural stereotypes can be detrimental to building good business relationships. Although national cultures could play a part in shaping the way we behave and think, we are also largely influenced by the region we come from, the communities we associate with, our age and gender, our corporate culture and our individual experiences of the world. The knowledge of the potential differences should therefore be something we keep at the back of our minds, rather than something that we use to pigeonhole the individuals of an entire nation. After finish my sharing i want to askanother question that In your opinion, how to deal with the communication barriers caused by cultural differences in international business communication? "
+  utter_communication_barriers_solution:
+    - text: "You answer is insteresting ,thank you for your answer. Really grateful for everyone jumping in with answers."
   utter_thank_teacher:
     - text: "You're welcome! If you have any more questions, feel free to ask."
   utter_express_interest:
@@ -45,16 +36,12 @@ responses:
 
 actions:
   - utter_introduce_agent
-  - utter_start_lesson
-  - utter_ask_for_clarification_response
-  - utter_first_breakpoint_continuation
-  - utter_inquire_about_duration_response
-  - utter_second_breakpoint_continuation
-  - utter_ask_about_identity_change_response
-  - utter_third_breakpoint_continuation
-  - utter_ask_about_physical_condition_response
-  - utter_fourth_breakpoint_continuation
-  - utter_conclude_lesson
+  - utter_business_etiquette_info
+  - utter_preference_question_response
+  - utter_smiling_proverb_info
+  - utter_smiling_intelligence_info
+  -  utter_eye_contact_info
+  - utter_communication_barriers_solution
   - action_repeat_last_bot_message
   - utter_thank_teacher
   - utter_express_interest
