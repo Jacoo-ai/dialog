@@ -1,6 +1,6 @@
 version: "3.1"
 nlu:
-- intent: introduce_agent
+- intent: greet_and_introduce
   examples: |
     - Can you introduce yourself?
     - Tell us about you.
@@ -13,21 +13,9 @@ nlu:
     - How can you assist me in learning?
     - I'd like to know more about you, who are you?
     - What are you here for?
+    - Hey there, how's it going?
     - Can you describe your purpose?
-- intent: start_lesson
-  examples: |
-    - Please begin the lesson.
-    - Start telling the story.
-    - Let's start with today's lesson.
-    - Can we start the lesson now?
-    - I'm ready for the lesson, can we begin?
-    - Initiate today's learning, please.
-    - Let's get the lesson started.
-    - Shall we dive into today's topic?
-    - Begin the lesson, please.
-    - Time to start learning, right?
-    - Let's kick off today's lesson.
-    - Ready to start, please proceed.
+
 - intent: ask_for_clarification
   examples: |
     - How many different languages exist in the world today?
@@ -41,20 +29,7 @@ nlu:
     - How many languages are spoken by humans today?
     - What is the total number of languages in use by humans today?
     - How many languages are currently spoken by the human population?
-- intent: request_continuation
-  examples: |
-    - Please continue.
-    - Go on with the story.
-    - Keep going, what happens next?
-    - Can you proceed with the lesson?
-    - Continue the story, please.
-    - What comes after that?
-    - Keep telling the story.
-    - Don't stop now, what's next?
-    - Please keep going with the lesson.
-    - I'm eager to hear more, continue please.
-    - What follows in the story?
-    - Carry on with the explanation.
+
 - intent: inquire_about_dolphin_language
   examples: |
     - Pardon my interruption,but Why would we think that dolphin language also follows some grammar? 
@@ -72,25 +47,31 @@ nlu:
     - What makes us think that dolphins might have grammar in their communication?
 - intent: ask_about_proto_language
   examples: |
-    - What changed for him at 13 and again at 18?
-    - Can you explain the key changes in his life at those ages?
-    - What were the turning points at ages 13 and 18?
-    - How did his life alter at 13 and 18?
-    - What significant changes occurred when he was 13 and 18?
-    - Can you detail the milestones at 13 and 18 years old?
-    - What life events marked his 13th and 18th years?
-    - Describe the transformations at ages 13 and 18.
-    - What shifts happened in his career at 13 and 18?
-    - The changes at 13 and 18, can you expand on those?
-    - What were the pivotal moments at 13 and 18 in his life?
-    - How did Kilian's direction change at 13 and 18?
+    - Sorry to jump in, but I'm puzzled and could you explain this point in other words?
+    - I'm a bit confused, could you rephrase that?
+    - I'm not sure I understand, could you explain that in a different way?
+    - Can you express this idea differently to enhance clarity?
+    - I'm not following, could you restate that?
+    - I'm not sure I get it, could you explain that in another way?
+    - Can you put this point in other words to make it easier to grasp?
+    - I'm not sure I understand, could you rephrase that?
+    - Would you mind restating this point to make it more understandable?
+    - I'm not following, could you explain that in a different way?
+    - Could you provide an alternative explanation for this point?
+    - I'm not sure I get it, could you explain that in another way?
 
 - intent: student_answer_questions_about_language
   examples: |
     - The development of the society may effect the language ability.
-    
-    
-    
+    - Social evolution can impact linguistic skills.
+    - As society progresses, it can influence language proficiency.
+    - Changes in society might alter language capabilities.
+    - The growth of society could shape our language skills.
+    - Societal advancements may modify language abilities.
+    - The development of society can impact language skills.
+    - The evolution of society might influence language proficiency.
+    - The progress of society could alter language capabilities.
+    - The growth of society may shape our language skills.
 
 - intent: ask_about_human_civilization
   examples: |
@@ -108,9 +89,14 @@ nlu:
   examples: |
     - I think it is meaningful, because it can help us learn more about how humans develop in the earth.
     - Yes, it is meaningful, because it can help us understand the development of human society.
+    - I believe it's significant as it aids our understanding of human evolution on Earth.
+    - This seems important, helping us grasp human development on the planet.
     - Yes, it is meaningful, because it can help us understand the development of human civilization.
+    - I find it valuable, as it enlightens us about human growth on Earth.
+    - I consider it insightful, for it deepens our knowledge of humanity's Earthly evolution.
     - Yes, it is meaningful, because it can help us understand the development of human language.
-    - Yes, it is meaningful, because it can help us understand the development of human culture.
+    - I view it as meaningful, since it enhances our comprehension of human progression on Earth.
+    - I think it is meaningful, because it can help us understand the development of human language.
 
 - intent: ask_for_repetition
   examples: |

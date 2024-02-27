@@ -1,42 +1,29 @@
 version: "3.0"
 intents:
-  - introduce_agent
-  - start_lesson
+  - greet_and_introduce
   - ask_for_clarification
-  - request_continuation
   - inquire_about_dolphin_language
   - ask_about_proto_language
   - utter_answer_questions_about_language
   - ask_about_human_civilization
   - final_question_answer
-  - ask_for_repetition
   - thank_teacher
   - express_interest
   - greet
 
 responses:
-  utter_introduce_agent:
-    - text: "I'm good, super happy to be here with you all! Let's start."
-  utter_start_lesson:
-    - text: "Thanks to the field of linguistics we know much about the development of the 5,000 plus languages in existence today. We can describe their grammar and pronunciation and see how their spoken and written forms have changed over time. For example, we understand the origins of the Indo-European group of languages, which includes Norwegian, Hindi and English, and can trace them back to tribes in eastern Europe in about 3000 BC."
+  utter_introduce_agent_and_start_lesson:
+    - text: "I'm good, super happy to be here with you all! Let's start. Thanks to the field of linguistics we know much about the development of the 5,000 plus languages in existence today. We can describe their grammar and pronunciation and see how their spoken and written forms have changed over time. For example, we understand the origins of the Indo-European group of languages, which includes Norwegian, Hindi and English, and can trace them back to tribes in eastern Europe in about 3000 BC."
   utter_ask_for_clarification_response:
-    - text: "Over 5,000."
-  utter_first_breakpoint_continuation:
-    - text: "So, we have mapped out a great deal of the history of language, but there are still areas we know little about. Experts are beginning to look to the field of evolutionary biology to find out how the human species developed to be able to use language. So far, there are far more questions and half-theories than answers. We know that human language is far more complex than that of even our nearest and most intelligent relatives like chimpanzees. We can express complex thoughts, convey subtle emotions and communicate about abstract concepts such as past and future. And we do this following a set of structural rules, known as grammar. Do only humans use an innate system of rules to govern the order of words? Perhaps not, as some research may suggest dolphins share this capability because they are able to recognise when these rules are broken."
+    - text: "Over 5,000.So, we have mapped out a great deal of the history of language, but there are still areas we know little about. Experts are beginning to look to the field of evolutionary biology to find out how the human species developed to be able to use language. So far, there are far more questions and half-theories than answers. We know that human language is far more complex than that of even our nearest and most intelligent relatives like chimpanzees. We can express complex thoughts, convey subtle emotions and communicate about abstract concepts such as past and future. And we do this following a set of structural rules, known as grammar. Do only humans use an innate system of rules to govern the order of words? Perhaps not, as some research may suggest dolphins share this capability because they are able to recognise when these rules are broken."
   utter_inquire_about_dolphin_language_response:
-    - text: "Cause dolphins can recognise the wrong grammars when the rules were broken."
-  utter_second_breakpoint_continuation:
-    - text: "If we want to know where our capability for complex language came from, we need to look at how our brains are different from other animals. This relates to more than just brain size; it is important what other things our brains can do and when and why they evolved that way. And for this there are very few physical clues; artefacts left by our ancestors don't tell us what speech they were capable of making. One thing we can see in the remains of early humans, however, is the development of the mouth, throat and tongue. By about 100,000 years ago, humans had evolved the ability to create complex sounds. Before that, evolutionary biologists can only guess whether or not early humans communicated using more basic sounds.Another question is, what is it about human brains that allowed language to evolve in a way that it did not in other primates? At some point, our brains became able to make our mouths produce vowel and consonant sounds, and we developed the capacity to invent words to name things around us. These were the basic ingredients for complex language. The next change would have been to put those words into sentences, similar to the 'protolanguage' children use when they first learn to speak."
+    - text: "Cause dolphins can recognise the wrong grammars when the rules were broken. If we want to know where our capability for complex language came from, we need to look at how our brains are different from other animals. This relates to more than just brain size; it is important what other things our brains can do and when and why they evolved that way. And for this there are very few physical clues; artefacts left by our ancestors don't tell us what speech they were capable of making. One thing we can see in the remains of early humans, however, is the development of the mouth, throat and tongue. By about 100,000 years ago, humans had evolved the ability to create complex sounds. Before that, evolutionary biologists can only guess whether or not early humans communicated using more basic sounds. Another question is, what is it about human brains that allowed language to evolve in a way that it did not in other primates? At some point, our brains became able to make our mouths produce vowel and consonant sounds, and we developed the capacity to invent words to name things around us. These were the basic ingredients for complex language. The next change would have been to put those words into sentences, similar to the 'protolanguage' children use when they first learn to speak."
   utter_ask_about_proto_language_response:
-    - text: "That’s mean, the language of very young children has something in common with the way our prehistoric ancestors may have spoken."
-  utter_third_breakpoint_continuation:
-    - text: "No one knows if the next step – adding grammar to signal past, present and future, for example, or plurals and relative clauses – required a further development in the human brain or was simply a response to our increasingly civilised way of living together."
+    - text: "That’s mean, the language of very young children has something in common with the way our prehistoric ancestors may have spoken. No one knows if the next step – adding grammar to signal past, present and future, for example, or plurals and relative clauses – required a further development in the human brain or was simply a response to our increasingly civilised way of living together. Time to ask question. After learning the above, what other factors do you think determine language ability?"
   utter_questions_about_language_response:
     - text: "That's an excellent point!  Between 100,000 and 50,000 years ago, though, we start to see the evidence of early human civilisation, through cave paintings for example; no one knows the connection between this and language. Brains didn't suddenly get bigger, yet humans did become more complex and more intelligent. Was it using language that caused their brains to develop? Or did their more complex brains start producing language?"
   utter_ask_about_human_civilization_response:
-    - text: "It’s between 100,000 and 50,000 years ago."
-  utter_fourth_breakpoint_continuation:
-    - text: "More questions lie in looking at the influence of genetics on brain and language development. Are there genes that mutated and gave us language ability? Researchers have found a gene mutation that occurred between 200,000 and 100,000 years ago, which seems to have a connection with speaking and how our brains control our mouths and face. Monkeys have a similar gene, but it did not undergo this mutation. It's too early to say how much influence genes have on language, but one day the answers might be found in our DNA.And that's a wrap on my end. Now, I've got another question for you guys. Do you think the research in the language domain is meaningful and why?"
+    - text: "It’s between 100,000 and 50,000 years ago. More questions lie in looking at the influence of genetics on brain and language development. Are there genes that mutated and gave us language ability? Researchers have found a gene mutation that occurred between 200,000 and 100,000 years ago, which seems to have a connection with speaking and how our brains control our mouths and face. Monkeys have a similar gene, but it did not undergo this mutation. It's too early to say how much influence genes have on language, but one day the answers might be found in our DNA. And that's a wrap on my end. Now, I've got another question for you guys. Do you think the research in the language domain is meaningful and why?"
   utter_final_question_response:
     - text: "Nice! That’s a great way to look at it. Really grateful for everyone jumping in with answers."
   utter_thank_teacher:
@@ -47,19 +34,13 @@ responses:
     - text: "Hello, nice to meet you!"
 
 actions:
-  - utter_introduce_agent
-  - utter_start_lesson
+  - utter_introduce_agent_and_start_lesson
   - utter_ask_for_clarification_response
-  - utter_first_breakpoint_continuation
   - utter_inquire_about_dolphin_language_response
-  - utter_second_breakpoint_continuation
   - utter_ask_about_proto_language_response
-  - utter_third_breakpoint_continuation
   - utter_questions_about_language_response
   - utter_ask_about_human_civilization_response
-  - utter_fourth_breakpoint_continuation
   - utter_final_question_response
-  - action_repeat_last_bot_message
   - utter_thank_teacher
   - utter_express_interest
   - utter_greet
