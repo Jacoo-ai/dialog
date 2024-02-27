@@ -4,16 +4,8 @@ stories:
 - story: human_language_evolution_lesson
   steps:
   - intent: greet_and_introduce
-  - action: utter_introduce_agent_and_start_lesson
-  - intent: ask_for_clarification
-  - action: utter_ask_for_clarification_response
-  - intent: inquire_about_dolphin_language
-  - action: utter_inquire_about_dolphin_language_response
-  - intent: ask_about_proto_language
-  - action: utter_ask_about_proto_language_response
+  - action: utter_main_story
   - intent: student_answer_questions_about_language
   - action: utter_questions_about_language_response
-  - intent: ask_about_human_civilization
-  - action: utter_ask_about_human_civilization_response
   - intent: final_question_answer
   - action: utter_final_question_response

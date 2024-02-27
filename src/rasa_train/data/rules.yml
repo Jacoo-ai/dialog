@@ -27,3 +27,23 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: break point 1
+    steps:
+      - intent: ask_for_clarification
+      - action: utter_ask_for_clarification_response
+
+  - rule: break point 2
+    steps:
+      - intent: inquire_about_dolphin_language
+      - action: utter_inquire_about_dolphin_language_response
+
+  - rule: break point 3
+    steps:
+      - intent: ask_about_proto_language
+      - action: utter_ask_about_proto_language_response
+
+  - rule  : break point 4
+    steps:
+      - intent: ask_about_human_civilization
+      - action: utter_ask_about_human_civilization_response
