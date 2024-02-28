@@ -27,3 +27,22 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: break point 1
+    steps:
+      - intent: preference_question
+      - action: utter_preference_question_response
+  - rule: break point 2
+    steps:
+      - intent: ask_about_smiling_proverb
+      - action: utter_smiling_proverb_info
+
+  - rule: break point 3
+    steps:
+      - intent: ask_about_smiling_intelligence
+      - action: utter_smiling_intelligence_info
+
+  - rule: break point 4
+    steps:
+      - intent: ask_about_eye_contact
+      - action: utter_eye_contact_info
