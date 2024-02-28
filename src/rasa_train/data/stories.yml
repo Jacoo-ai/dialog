@@ -27,15 +27,7 @@ stories:
 #  - action: utter_conclude_lesson
   - intent: greet_guest_teacher
   - action: utter_greet_guest_teacher_and_start_lesson
-  - intent: ask_about_previous_studies
-  - action: utter_ask_about_previous_studies_response
-  - intent: clarify_organic_molecules
-  - action: utter_clarify_organic_molecules_response
-  - intent: inquire_about_methane_lifespan
-  - action: utter_inquire_about_methane_lifespan_response
   - intent: discuss_mars_seasons
   - action: utter_discuss_mars_seasons_response
-  - intent: ask_about_future_expeditions
-  - action: utter_ask_about_future_expeditions_response
   - intent: discuss_mars_life
   - action: utter_discuss_mars_life_response

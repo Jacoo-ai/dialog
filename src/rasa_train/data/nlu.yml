@@ -74,6 +74,7 @@ nlu:
     - There is no direct evidence of life on Mars.
     - I think the real situation needs more scientific exploration to prove.
     - I think the possibility of life on Mars is still a mystery.
+    
 
 - intent: ask_for_repetition
   examples: |

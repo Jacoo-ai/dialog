@@ -27,3 +27,23 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: break point 1
+    steps:
+      - intent: ask_about_previous_studies
+      - action: utter_ask_about_previous_studies_response
+
+  - rule: break point 2
+    steps:
+      - intent: clarify_organic_molecules
+      - action: utter_clarify_organic_molecules_response
+
+  - rule: break point 3
+    steps:
+      - intent: inquire_about_methane_lifespan
+      - action: utter_inquire_about_methane_lifespan_response
+
+  - rule: break point 4
+    steps:
+      - intent: ask_about_future_expeditions
+      - action: utter_ask_about_future_expeditions_response
