@@ -27,3 +27,28 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
+
+  - rule: break point 1
+    steps:
+      - intent: ask_for_clarification
+      - action: utter_ask_for_clarification_response
+
+  - rule: break point 2
+    steps:
+      - intent: inquire_about_duration
+      - action: utter_inquire_about_duration_response
+
+  - rule: break point 3
+    steps:
+      - intent: ask_about_identity_change
+      - action: utter_ask_about_identity_change_response
+
+  - rule: break point 4
+    steps:
+      - intent: ask_about_physical_condition
+      - action: utter_ask_about_physical_condition_response
+
+  - rule: break point 5
+    steps:
+      - intent: conclude_lesson
+      - action: utter_conclude_lesson

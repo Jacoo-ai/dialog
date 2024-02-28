@@ -50,18 +50,21 @@ nlu:
     - At what height does the air get too thin?
 - intent: request_continuation
   examples: |
-    - Please continue.
-    - Go on with the story.
-    - Keep going, what happens next?
-    - Can you proceed with the lesson?
-    - Continue the story, please.
-    - What comes after that?
-    - Keep telling the story.
-    - Don't stop now, what's next?
-    - Please keep going with the lesson.
-    - I'm eager to hear more, continue please.
-    - What follows in the story?
-    - Carry on with the explanation.
+    - Mountain climbing combines intense physical challenge with profound personal achievement.
+    - I'm ready to hear more about Kilian's Everest climbs.
+    - I'm interested in learning more about Kilian's life.
+    - It offers an intimate and humbling experience with nature's beauty.
+    - I'd like to hear more about Kilian's training and physical condition.
+    - I'm eager to learn more about Kilian's life and achievements.
+    - I'm curious to know more about Kilian's physical condition.
+    - Climbing requires careful preparation and respect for inherent risks.
+    - I'm interested in learning more about Kilian's life and training.
+    - I'd like to hear more about Kilian's physical condition and training.
+    - I'm ready to hear more about Kilian's life and achievements.
+    - It's a test of mental strength and endurance in demanding conditions.
+    - I'm interested in learning more about Kilian's life and physical condition.
+    - I'm curious to know more about Kilian's life and training.
+    - Climbing fosters strong bonds and teamwork among climbers.
 - intent: inquire_about_duration
   examples: |
     - How long did it take him to climb Everest?
@@ -124,6 +127,21 @@ nlu:
     - Is there anything else, or is that it?
     - That's all for today's lesson, correct?
     - Are we concluding the lesson now?
+
+- intent: feedback_on_lesson
+  examples: |
+    - Kilian's story teaches the importance of resilience and overcoming obstacles.
+    - I'm inspired by Kilian's dedication and perseverance.
+    - Kilian's story is a testament to the power of determination.
+    - I'm impressed by Kilian's mental and physical strength.
+    -  It highlights the power of passion and unwavering commitment to one's goals.
+    - Kilian's story is a great example of the rewards of hard work and dedication.
+    - We learn the value of constantly striving for personal and professional growth.
+    - His journey underscores the importance of balancing ambition with personal well-being.
+    - Kilian's story shows how individual achievements can inspire and positively influence others.
+    - It's a great example of how personal challenges can be turned into opportunities for growth.
+    - Kilian's story is a great example of the rewards of hard work and dedication.
+    
 
 - intent: ask_for_repetition
   examples: |
