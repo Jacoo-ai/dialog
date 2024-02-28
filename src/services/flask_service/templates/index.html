@@ -2,36 +2,43 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rapport example</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/subtitle.css">
+    <link rel="stylesheet" href="../static/css/notice.css">
+    <title>Rapport example</title>
 
-  <!-- Load Rapport Web Viewer. -->
-  <script src="https://cdn.rapport.cloud/rapport-web-viewer/rapport.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@deepgram/sdk"></script>
+    <!-- Load Rapport Web Viewer. -->
+    <script src="https://cdn.rapport.cloud/rapport-web-viewer/rapport.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@deepgram/sdk"></script>
 </head>
 
 <body>
-  <button id="demoButton">Start Demo</button>
-  <button id="endButton">End Demo</button>
-  <br>
-  <br>
-  <button id="openMicrophoneButton">Open Microphone</button>
-  <button id="closeMicrophoneButton">Close Microphone</button>
+<button id="demoButton">Start Demo</button>
+<button id="endButton">End Demo</button>
+<br>
+<br>
+<button id="openMicrophoneButton">Open Microphone</button>
+<button id="closeMicrophoneButton">Close Microphone</button>
 
-  <div>
+<div class="container">
+    <div id="loadCompleteNotice" class="load-complete-notice">
+        Load Completed
+    </div>
     <rapport-scene id="rapportScene" background-color="transparent" loading-image=""
-      style="width: 600px; height: 600px;"></rapport-scene>
-  </div>
-  <div class="captions" id="captions">
-      <span>Captions by Deepgram</span>
-  </div>
+                   style="width: 600px; height: 600px;"></rapport-scene>
+    <div id="chat" class="chat-container">
+
+    </div>
+</div>
 
 </body>
 <script src="../static/js/tts.js"></script>
 <script src="../static/js/microphone.js"></script>
 <script src="../static/js/asr.js"></script>
-
+<script src="../static/js/subtitle.js"></script>
+<script src="../static/js/notice.js"></script>
 </html>

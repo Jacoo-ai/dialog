@@ -4,7 +4,6 @@ const rapportScene = document.getElementById('rapportScene');
 const demoButton = document.getElementById('demoButton');
 const endButton = document.getElementById('endButton');
 
-
 demoButton.addEventListener('click', async () => {
     const enableCookies = false;
 
@@ -17,9 +16,9 @@ demoButton.addEventListener('click', async () => {
             openingText: 'Start',
             enableCookies,
             sessionConnected: () => {
+                notice_complete();
                 enableTTS = true;
                 send_text("hello, really nice to meet you");
-                getTextUpdater();
             },
             sessionDisconnected: () => {
                 // Timeout handler.
@@ -43,6 +42,7 @@ endButton.addEventListener('click', async () => {
 });
 
 async function send_text(text) {
+    addMessage("Agent", text, "../static/img/Agent.png");
     if (enableTTS && text) {
         rapportScene.modules.tts.sendText(text)
     } else {
@@ -50,36 +50,31 @@ async function send_text(text) {
     }
 }
 
-function getTextUpdater() {
-    $.ajax({
-        url: '/get_information',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            const text_content = data.text_content;
-            if (text_content !== "") {
-                send_text(text_content)
-                console.log("Popped text:", text_content);
-            }
+document.addEventListener('DOMContentLoaded', (event) => {
+    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 
-            const command = data.command;
-            if (command !== "") {
-                rapportScene.modules.commands.stopAllSpeech();
-                console.log("Stopped!!!");
-                send_text("Ok, What's your questions?")
-            }
-            // 定时调用
-            textUpdater = setTimeout(getTextUpdater, 100);
-        }
+    socket.on('connect', function () {
+        console.log('Connected to Flask');
     });
-}
+
+    socket.on('disconnect', function () {
+        console.log('Disconnected to Flask');
+    });
+
+    socket.on('get_tts_text', function (data) {
+        send_text(data.text_content)
+        console.log("Popped text:", data.text_content);
+    });
+
+    socket.on('get_tts_command', function (data) {
+        rapportScene.modules.commands.stopAllSpeech();
+        console.log("Stopped!!!");
+    });
+});
 
 rapportScene.addEventListener('ttsStart', (e) => {
     $.ajax({
-        url: '/tts_start',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
+        url: '/tts_start', type: 'GET', dataType: 'json', success: function (data) {
             console.log("tts_disabled");
         }
     });
@@ -88,25 +83,11 @@ rapportScene.addEventListener('ttsStart', (e) => {
 
 rapportScene.addEventListener('ttsEnd', (e) => {
     $.ajax({
-        url: '/tts_end',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
+        url: '/tts_end', type: 'GET', dataType: 'json', success: function (data) {
             console.log("tts_enabled");
         }
     });
 });
-
-function disable_tts() {
-    $.ajax({
-        url: '/tts_start',
-        type: 'GET',
-        dataType: 'json',
-        success: function (data) {
-            console.log("tts_disabled");
-        }
-    });
-}
 
 function cancelTextUpdater() {
     clearTimeout(textUpdater);

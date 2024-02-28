@@ -25,7 +25,7 @@ class Rasa:
         return text
 
     @staticmethod
-    def start_rasa_actions():
+    def rasa_actions_start():
         try:
             subprocess.Popen(["rasa", "run", "actions"], cwd="rasa_train")
             print("rasa action server started...")
@@ -33,7 +33,8 @@ class Rasa:
             print(f"rasa action server error: {e}")
 
 
-model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
+# model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
+model_path = "rasa_train/models/20240227-205443-complicated-cornice.tar.gz"
 # model_path = "rasa_train/models/20240213-212046-largo-twitch.tar.gz"
 print("rasa server started...")
 rasa_service = Rasa(model_path)

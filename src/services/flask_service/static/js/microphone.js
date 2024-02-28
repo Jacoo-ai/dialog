@@ -7,7 +7,7 @@ async function getMicrophone() {
 }
 
 async function openMicrophone(microphone, socket) {
-  await microphone.start(500);
+  await microphone.start(100);
 
   microphone.onstart = () => {
     console.log("client: microphone opened");

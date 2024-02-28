@@ -1,36 +1,46 @@
-import re
 import time
 
 from nltk.tokenize import sent_tokenize
 
-text_stack = []
-prompt_text = "Ok, What's your questions?"
-connect_text = "Let's continue our class."
+
+class TextState:
+    def __init__(self):
+        self.text_stack = []
+        self.connect_text = "Let's continue our class."
+        self.last_text_content = ""
+        self.pop_enable = True
+
+
+state = TextState()
+
 
 def push_paragraph(paragraph):
     sentences = sent_tokenize(paragraph)
     while len(sentences) > 0:
-        text_stack.append(sentences.pop())
-
-
-def translate_data_start(flask_state, speed):
-    while True:
-        duration = speed
-
-        if text_stack and flask_state.tts_text_content == "" and flask_state.tts_enable:
-            flask_state.tts_text_content = text_stack.pop()
-            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-            print(flask_state.tts_text_content)
-            print()
-            duration = len(re.split(r'\s|[,;.]+', flask_state.tts_text_content)) * speed
-        time.sleep(duration)
+        state.text_stack.append(sentences.pop())
 
 
 def push_stop_information():
-    if check_necessary_insert_stop_information():
-        push_paragraph(connect_text)
-        # push_paragraph(prompt_text)
+    if not (state.connect_text in state.text_stack):
+        push_paragraph(state.last_text_content)
+        push_paragraph(state.connect_text)
 
 
-def check_necessary_insert_stop_information():
-    return not ("Let's continue our class." in text_stack)
+def disable_pop():
+    state.pop_enable = False
+
+
+def enable_pop():
+    state.pop_enable = True
+
+
+def text_server_start(flask_server):
+    # TODO send 2 text to avoid delay between sentence
+    while True:
+        text_server_flag = state.text_stack and state.pop_enable
+        flask_server_flag = flask_server.state.tts_enable and flask_server.state.tts_text_content == ""
+        if text_server_flag and flask_server_flag:
+            state.last_text_content = state.text_stack.pop()
+            flask_server.send_tts_text(state.last_text_content)
+        else:
+            time.sleep(0.1)

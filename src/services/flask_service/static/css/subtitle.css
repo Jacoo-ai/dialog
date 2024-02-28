@@ -1,0 +1,58 @@
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .chat-container {
+    max-height: 600px;
+    overflow-y: auto;
+    width: 600px;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+
+  }
+
+  .message {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .bubble {
+    padding: 6px 8px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    order: 3;
+  }
+
+  .user .bubble {
+    background-color: #007bff;
+    margin-left: auto;
+    order: 1;
+  }
+
+  .agent .bubble {
+    background-color: #4caf50;
+    margin-right: auto;
+    order: 2;
+  }
+
+  .agent {
+    flex-direction: row-reverse;
+  }
+
+  .user {
+    flex-direction: row;
+  }
