@@ -27,7 +27,3 @@ stories:
 #  - action: utter_conclude_lesson
   - intent: greet_guest_teacher
   - action: utter_greet_guest_teacher_and_start_lesson
-  - intent: discuss_mars_seasons
-  - action: utter_discuss_mars_seasons_response
-  - intent: discuss_mars_life
-  - action: utter_discuss_mars_life_response
