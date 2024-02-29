@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="015ad7e7-607b-455e-b288-2f492bbd41ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rasa_train/data/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/rasa_train/data/rules.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rasa_train/data/stories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/rasa_train/data/stories.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rasa_train/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/rasa_train/domain.yml" afterDir="false" />
     </list>
@@ -33,15 +32,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;RASA__essay__4&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "RASA__essay__4__difficulties1-3",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="dialog1" />
