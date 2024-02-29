@@ -5,7 +5,4 @@ stories:
   steps:
   - intent: greet_and_introduce
   - action: utter_main_story
-  - intent: student_answer_questions_about_language
-  - action: utter_questions_about_language_response
-  - intent: final_question_answer
-  - action: utter_final_question_response
+
