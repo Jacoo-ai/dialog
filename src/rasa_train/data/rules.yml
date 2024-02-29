@@ -18,10 +18,6 @@ rules:
       - intent: express_interest
       - action: utter_express_interest
 
-  - rule: Repeat last bot message
-    steps:
-    - intent: ask_for_repetition
-    - action: action_repeat_last_bot_message
 
   - rule: Say hello when greet
     steps:
