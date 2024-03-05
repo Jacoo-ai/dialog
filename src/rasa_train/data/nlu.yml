@@ -141,76 +141,6 @@ nlu:
     - Kilian's story shows how individual achievements can inspire and positively influence others.
     - It's a great example of how personal challenges can be turned into opportunities for growth.
     - Kilian's story is a great example of the rewards of hard work and dedication.
-    
-
-- intent: ask_for_repetition
-  examples: |
-    - Can you say that again?
-    - I didn't catch that, could you repeat?
-    - Can you repeat the last part?
-    - Please say that once more.
-    - Could you go over that again?
-    - Repeat that, please.
-    - I missed what you said. Repeat, please?
-    - Could you say that one more time?
-    - I need to hear that again, please.
-    - Sorry, could you repeat what you just said?
-    - Can you go back a bit and repeat?
-    - What was that again?
-    - Say that once again, please.
-    - I didn't get that, can you repeat it?
-    - Can you reiterate that?
-    - Please recap what you just said.
-    - Could you review that last point?
-    - I wasn't clear on that, say again?
-    - Repeat that bit for me, please.
-    - Could we go over that part once more?
-
-- intent: thank_teacher
-  examples: |
-    - Thank you for explaining.
-    - Thanks, that makes sense now.
-    - I appreciate your help.
-    - That was helpful, thank you.
-    - Thanks for your patience.
-    - Much appreciated, thank you.
-    - Grateful for your explanation.
-    - Thanks for clearing that up.
-    - Your help is much appreciated.
-    - Thank you for your patience.
-    - Thanks for the clarification.
-    - That explanation was great, thanks.
-    - I understand better now, thank you.
-    - Your guidance is appreciated.
-    - Thanks for taking the time.
-    - Thank you, that was enlightening.
-    - Gratitude for your assistance.
-    - Thanks for going over that.
-    - Your support means a lot, thank you.
-    - Thank you for breaking it down for me.
-
-- intent: express_interest
-  examples: |
-    - That's interesting!
-    - Wow, I didn't know that.
-    - That's fascinating, tell me more.
-    - This is really engaging.
-    - I'm intrigued, go on.
-    - That's quite interesting, elaborate please.
-    - Really? That's awesome!
-    - I'm curious, can you expand on that?
-    - This topic is really captivating.
-    - Tell me more, this is exciting.
-    - I'm very interested in this, continue.
-    - This is so interesting, what else can you share?
-    - I'm eager to learn more, please go on.
-    - That caught my attention, elaborate more.
-    - Fascinating, can you dive deeper?
-    - I want to know more about this.
-    - Keep going, this is good stuff.
-    - That's compelling, what else?
-    - I'm hooked, tell me more about this.
-    - This part is really interesting, please continue.
 
 - intent: greet
   examples: |
@@ -218,3 +148,26 @@ nlu:
     - How are you doing?
     - Nice to meet you!
     - Hi
+
+- intent: stop
+  examples: |
+    - Hold on a moment.
+    - Just a second.
+    - Wait a minute.
+    - One moment, please.
+    - Can I pause you there?
+    - Just to stop you there...
+    - Hold that thought.
+    - Let me stop you right there.
+    - Pause for a second.
+    - Hang on a sec.
+    - Wait, please.
+    - Can we hold on?
+    - Let's pause there.
+    - Can I just interrupt for a moment?
+    - Hold up a minute.
+    - Give me a moment, please.
+    - Can we take a quick pause?
+    - Stop for a moment, please.
+    - Can I have a word?
+    - Just hold on.

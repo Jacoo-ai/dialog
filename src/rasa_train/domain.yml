@@ -39,6 +39,8 @@ responses:
     - text: "I'm glad you find it interesting!"
   utter_greet:
     - text: "Hello, nice to meet you!"
+  utter_stop:
+    - text: "stop"
 
 actions:
   - utter_introduce_agent
@@ -53,6 +55,7 @@ actions:
   - utter_thank_teacher
   - utter_express_interest
   - utter_greet
+  - utter_stop
 
 
 
