@@ -22,8 +22,12 @@ def process_sentences():
     while True:
         debug_text()
         asr_text_content = flask_server.wait_for_asr_text_content()
-
-        if ("stop" in asr_text_content.lower()) and (not flask_server.state.tts_enable):
+        rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
+        print("==========================================================================================")
+        print(asr_text_content)
+        print(rasa_text_content)
+        print()
+        if ("stop" in rasa_text_content.lower()) and (not flask_server.state.tts_enable):
             text_server.disable_pop()
 
             flask_server.send_tts_text("Ok, What's your questions?")
@@ -38,10 +42,7 @@ def process_sentences():
         elif not flask_server.state.tts_enable:
             continue
 
-        print("==========================================================================================")
-        print(asr_text_content)
-        print()
-        rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
+
         text_server.push_paragraph(rasa_text_content)
 
 

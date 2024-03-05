@@ -1,0 +1,11 @@
+version: "3.1"
+
+stories:
+- story: complete teaching session
+  steps:
+  - intent: introduce_agent
+  - action: utter_introduce_agent
+  - intent: request_continuation
+  - action: utter_first_breakpoint_continuation
+  - intent: feedback_on_lesson
+  - action: utter_feedback_on_lesson

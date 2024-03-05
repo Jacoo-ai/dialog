@@ -34,7 +34,7 @@ class Rasa:
 
 
 # model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
-model_path = "rasa_train/models/20240227-205443-complicated-cornice.tar.gz"
+model_path = "rasa_train/models/20240305-012050-cool-persian.tar.gz"
 # model_path = "rasa_train/models/20240213-212046-largo-twitch.tar.gz"
 print("rasa server started...")
 rasa_service = Rasa(model_path)

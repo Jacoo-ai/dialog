@@ -1,0 +1,59 @@
+#- rule: Say goodbye anytime the user says goodbye
+#  steps:
+#  - intent: goodbye
+#  - action: utter_goodbye
+#
+#- rule: Say 'I am a bot' anytime the user challenges
+#  steps:
+#  - intent: bot_challenge
+#  - action: utter_iamabot
+rules:
+  - rule: Acknowledge thanks
+    steps:
+      - intent: thank_teacher
+      - action: utter_thank_teacher
+
+  - rule: Expand on topic when interest is expressed
+    steps:
+      - intent: express_interest
+      - action: utter_express_interest
+
+  - rule: Repeat last bot message
+    steps:
+    - intent: ask_for_repetition
+    - action: action_repeat_last_bot_message
+
+  - rule: Say hello when greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: break point 1
+    steps:
+      - intent: ask_for_clarification
+      - action: utter_ask_for_clarification_response
+
+  - rule: break point 2
+    steps:
+      - intent: inquire_about_duration
+      - action: utter_inquire_about_duration_response
+
+  - rule: break point 3
+    steps:
+      - intent: ask_about_identity_change
+      - action: utter_ask_about_identity_change_response
+
+  - rule: break point 4
+    steps:
+      - intent: ask_about_physical_condition
+      - action: utter_ask_about_physical_condition_response
+
+  - rule: break point 5
+    steps:
+      - intent: conclude_lesson
+      - action: utter_conclude_lesson
+
+  - rule: stop
+    steps:
+      - intent: stop
+      - action: utter_stop
