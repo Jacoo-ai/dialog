@@ -37,7 +37,7 @@ window.addEventListener("load", async () => {
     socket = _deepgram.listen.live({
         model: "nova-2",
         smart_format: true,
-        endpointing: 200,
+        endpointing: 250,
     });
 
     socket.on("open", async () => {

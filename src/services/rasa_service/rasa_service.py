@@ -13,7 +13,7 @@ class Rasa:
     async def __parse_message(self, text):
         response = await self.__agent.handle_text(text)
         if len(response) == 0:
-            return "No response got from rasa"
+            return ""
         return response[0]['text']
 
     def change_model(self, model_path):
@@ -24,17 +24,9 @@ class Rasa:
         text = asyncio.run(self.__parse_message(text))
         return text
 
-    @staticmethod
-    def rasa_actions_start():
-        try:
-            subprocess.Popen(["rasa", "run", "actions"], cwd="rasa_train")
-            print("rasa action server started...")
-        except Exception as e:
-            print(f"rasa action server error: {e}")
 
-
-# model_path = "rasa_train/models/20240212-023241-scared-search.tar.gz"
-model_path = "rasa_train/models/20240305-012050-cool-persian.tar.gz"
+model_path = "rasa_train/models/20240306-211826-oily-midi.tar.gz"
+# model_path = "rasa_train/models/20240305-012050-cool-persian.tar.gz"
 # model_path = "rasa_train/models/20240213-212046-largo-twitch.tar.gz"
 print("rasa server started...")
 rasa_service = Rasa(model_path)

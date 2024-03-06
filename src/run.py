@@ -1,3 +1,4 @@
+import re
 from threading import Thread
 
 from services.flask_service import app as flask_server
@@ -5,45 +6,59 @@ from services.rasa_service.rasa_service import rasa_service as rasa_server
 import src.services.text_service.text_service as text_server
 
 
-def debug_text():
-    # print("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    # print(text_server.state.text_stack)
-    # print(text_server.state.last_text_content)
-    # print(text_server.state.pop_enable)
-    #
-    # print(flask_server.state.asr_text_content)
-    # print(flask_server.state.tts_text_content)
-    # print(flask_server.state.tts_enable)
-    # print()
-    pass
+def wait_story_continue():
+    while True:
+        asr_text_content = flask_server.wait_for_asr_text_content()
+        rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
+        if text_server.judge_format(rasa_text_content, "story_continue"):
+            extract_text_content = text_server.extract_text(rasa_text_content)
+            text_server.push_paragraph(extract_text_content)
+            break
+    text_server.state.ask_enable = False
+
+
+def ask_and_response():
+    while True:
+        asr_text_content = flask_server.wait_for_asr_text_content()
+        rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
+        if text_server.judge_format(rasa_text_content, "continue"):
+            break
+
+        if text_server.judge_format(rasa_text_content, "answer"):
+            extract_text_content = text_server.extract_text(rasa_text_content)
+            flask_server.send_tts_text(extract_text_content)
+
+
+def interrupt():
+    text_server.disable_pop()
+
+    flask_server.send_tts_text("Ok, What's your questions?")
+    text_server.push_stop_information()
+    flask_server.send_tts_stop_command()
+
+    ask_and_response()
+
+    text_server.enable_pop()
 
 
 def process_sentences():
     while True:
-        debug_text()
         asr_text_content = flask_server.wait_for_asr_text_content()
         rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
         print("==========================================================================================")
         print(asr_text_content)
         print(rasa_text_content)
         print()
-        if ("stop" in rasa_text_content.lower()) and (not flask_server.state.tts_enable):
-            text_server.disable_pop()
-
-            flask_server.send_tts_text("Ok, What's your questions?")
-            text_server.push_stop_information()
-            flask_server.send_tts_stop_command()
-
-            asr_text_content = flask_server.wait_for_asr_text_content()
-            rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
-            text_server.push_paragraph(rasa_text_content)
-            text_server.enable_pop()
-            continue
+        if text_server.state.ask_enable:
+            wait_story_continue()
+        elif (text_server.judge_format(rasa_text_content, "stop")) and (not flask_server.state.tts_enable):
+            interrupt()
         elif not flask_server.state.tts_enable:
             continue
-
-
-        text_server.push_paragraph(rasa_text_content)
+        elif text_server.judge_format(rasa_text_content, "story") or text_server.judge_format(rasa_text_content,
+                                                                                              "answer"):
+            extract_text_content = text_server.extract_text(rasa_text_content)
+            text_server.push_paragraph(extract_text_content)
 
 
 def run_text_server():
@@ -54,22 +69,15 @@ def run_flask_server():
     flask_server.flask_server_start(port=5000)
 
 
-def run_rasa_action_server():
-    rasa_server.rasa_actions_start()
-
-
 if __name__ == "__main__":
     flask_thread = Thread(target=run_flask_server)
-    rasa_action_thread = Thread(target=run_rasa_action_server)
     process_sentences_thread = Thread(target=process_sentences)
     text_thread = Thread(target=run_text_server)
 
-    rasa_action_thread.start()
     flask_thread.start()
     process_sentences_thread.start()
     text_thread.start()
 
     process_sentences_thread.join()
-    rasa_action_thread.join()
     flask_thread.join()
     text_thread.join()

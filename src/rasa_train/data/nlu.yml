@@ -17,7 +17,6 @@ nlu:
     - What's your function?
     - Hey there, how's it going?
     - Hi, what's your name?
-
 - intent: start_lesson
   examples: |
     - Please begin the lesson.
@@ -34,20 +33,6 @@ nlu:
     - Ready to start, please proceed.
     - Can we start the class now?
     - I'm ready for the lesson, can we start?
-- intent: ask_for_clarification
-  examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
 - intent: request_continuation
   examples: |
     - Mountain climbing combines intense physical challenge with profound personal achievement.
@@ -65,7 +50,28 @@ nlu:
     - I'm interested in learning more about Kilian's life and physical condition.
     - I'm curious to know more about Kilian's life and training.
     - Climbing fosters strong bonds and teamwork among climbers.
-- intent: inquire_about_duration
+- intent: conclude_lesson
+  examples: |
+    - Wow, that was incredible! 
+    - Thanks a ton for sharing all that. 
+    - I bet everyone's got a lot to think about now. 
+    - Any questions you want to ask the class?
+    - Thanks a million to our guest and all of you for being such a great audience. 
+    - That's a wrap for today's class. Catch you all next time!"
+    - That was an amazing lesson, thank you.
+    - This concludes our lesson, right?
+    - Wow, what a story! Is that all for today?
+    - Thanks for the lesson, is it over now?
+    - Do we wrap up here?
+    - Is this the end of today's learning?
+    - Great story, are we done for the day?
+    - Was that the conclusion of our lesson?
+    - Have we reached the end of today's topic?
+    - Is there anything else, or is that it?
+    - That's all for today's lesson, correct?
+    - Are we concluding the lesson now?
+
+- intent: ask_about_duration
   examples: |
     - How long did it take him to climb Everest?
     - What was the duration of Kilian's first and second ascents?
@@ -107,41 +113,20 @@ nlu:
     - What contributes to Kilian's peak physical condition?
     - How does he manage his physical health so well?
     - What are the specifics of his training schedule?
-- intent: conclude_lesson
+- intent: ask_for_clarification
   examples: |
-    - Wow, that was incredible! 
-    - Thanks a ton for sharing all that. 
-    - I bet everyone's got a lot to think about now. 
-    - Any questions you want to ask the class?
-    - Thanks a million to our guest and all of you for being such a great audience. 
-    - That's a wrap for today's class. Catch you all next time!"
-    - That was an amazing lesson, thank you.
-    - This concludes our lesson, right?
-    - Wow, what a story! Is that all for today?
-    - Thanks for the lesson, is it over now?
-    - Do we wrap up here?
-    - Is this the end of today's learning?
-    - Great story, are we done for the day?
-    - Was that the conclusion of our lesson?
-    - Have we reached the end of today's topic?
-    - Is there anything else, or is that it?
-    - That's all for today's lesson, correct?
-    - Are we concluding the lesson now?
-
-- intent: feedback_on_lesson
-  examples: |
-    - Kilian's story teaches the importance of resilience and overcoming obstacles.
-    - I'm inspired by Kilian's dedication and perseverance.
-    - Kilian's story is a testament to the power of determination.
-    - I'm impressed by Kilian's mental and physical strength.
-    -  It highlights the power of passion and unwavering commitment to one's goals.
-    - Kilian's story is a great example of the rewards of hard work and dedication.
-    - We learn the value of constantly striving for personal and professional growth.
-    - His journey underscores the importance of balancing ambition with personal well-being.
-    - Kilian's story shows how individual achievements can inspire and positively influence others.
-    - It's a great example of how personal challenges can be turned into opportunities for growth.
-    - Kilian's story is a great example of the rewards of hard work and dedication.
-
+    - Could you clarify at what altitude it's hard to breathe?
+    - I didn't get the part about the altitude. Can you explain again?
+    - What altitude makes breathing difficult?
+    - Can you go over the altitude details once more?
+    - I'm confused about the altitude, can you clarify?
+    - What's the critical altitude for breathing issues?
+    - Explain the altitude effect again, please.
+    - I need more information on the altitude problem.
+    - Can you clarify the altitude where oxygen is needed?
+    - The altitude part was unclear, can you elaborate?
+    - What altitude starts to affect climbers?
+    - At what height does the air get too thin?
 - intent: greet
   examples: |
     - Hello!
@@ -171,3 +156,25 @@ nlu:
     - Stop for a moment, please.
     - Can I have a word?
     - Just hold on.
+
+- intent: continue
+  examples: |
+    - Please, go on.
+    - Can you continue?
+    - Go ahead, please.
+    - Shall we carry on?
+    - Please, proceed.
+    - Could you carry on with what you were saying?
+    - Let's get back to it, shall we?
+    - Feel free to continue.
+    - Can we pick up where we left off?
+    - Do go on.
+    - Alright, let's continue.
+    - Yes, please keep going.
+    - Where were we? Please, continue.
+    - Ready when you are to go on.
+    - Let's resume, please.
+    - Can we get back to the topic?
+    - I'm all ears, go on.
+    - Let's move on, shall we?
+    - Please, pick up the thread.
