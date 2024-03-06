@@ -49,10 +49,11 @@ def process_sentences():
         print(asr_text_content)
         print(rasa_text_content)
         print()
-        if text_server.state.ask_enable:
-            wait_story_continue()
-        elif (text_server.judge_format(rasa_text_content, "stop")) and (not flask_server.state.tts_enable):
+
+        if (text_server.judge_format(rasa_text_content, "stop")) and (not flask_server.state.tts_enable):
             interrupt()
+        elif text_server.state.ask_enable:
+            wait_story_continue()
         elif not flask_server.state.tts_enable:
             continue
         elif text_server.judge_format(rasa_text_content, "story") or text_server.judge_format(rasa_text_content,
