@@ -15,18 +15,18 @@ rules:
 
   - rule: break point 2
     steps:
-      - intent: ask_about_duration
-      - action: utter_ask_about_duration_response
+      - intent: inquire_about_dolphin_language
+      - action: utter_inquire_about_dolphin_language_response
 
   - rule: break point 3
     steps:
-      - intent: ask_about_identity_change
-      - action: utter_ask_about_identity_change_response
+      - intent: ask_about_proto_language
+      - action: utter_ask_about_proto_language_response
 
   - rule: break point 4
     steps:
-      - intent: ask_about_physical_condition
-      - action: utter_ask_about_physical_condition_response
+      - intent: ask_about_human_civilization
+      - action: utter_ask_about_human_civilization_response
 
   - rule: introduce itself
     steps:

@@ -1,14 +1,14 @@
 # Story1
 
 ## Story:
-1. Can you introduce yourself
-2. Let's begin our lesson
-3. I'm ready to hear more about Kilian's Everest climbs.
-4. Thanks a ton for sharing all that. 
+1. Tell us about you.
+2. Let's start with today's lesson.
+3. The development of the society may affect the language ability.
+4. I bet everyone's got a lot to think about now. 
 
 
 ## Questions
-1. Could you clarify at what altitude it's hard to breathe?
-2. How long did it take him to climb Everest?
-3. What changed for him at 13 and again at 18?
-4. What's the secret to Kilian's fitness?
+1. How many different languages exist in the world today?
+2. Pardon my interruption,but Why would we think that dolphin language also follows some grammar? 
+3. Sorry to jump in, but I'm puzzled and could you explain this point in other words?
+4. When did evidence of ancient human civilization first emerge?
