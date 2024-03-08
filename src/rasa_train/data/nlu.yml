@@ -35,16 +35,20 @@ nlu:
     - I'm ready for the lesson, can we start?
 - intent: request_continuation
   examples: |
-    - The development of the society may effect the language ability.
-    - Social evolution can impact linguistic skills.
-    - As society progresses, it can influence language proficiency.
-    - Changes in society might alter language capabilities.
-    - The growth of society could shape our language skills.
-    - Societal advancements may modify language abilities.
-    - The development of society can impact language skills.
-    - The evolution of society might influence language proficiency.
-    - The progress of society could alter language capabilities.
-    - The growth of society may shape our language skills.
+    - I think cultural and social interactions play a crucial role in language development, please continue.
+    - I believe the research in the language domain is meaningful, please continue.
+    - Perhaps brain development and neurological factors contribute significantly, go on with the lesson.
+    - I think the development of the human species is a key factor, please continue.
+    - I think cognitive abilities and memory capacity might influence language skills, go on.
+    - I think the development of the human species is a key factor, please continue.
+    - I believe exposure to diverse languages and experiences can impact language skills, keep going.
+    - I suppose individual motivation and practice play a role in language acquisition, continue please.
+    - I think cultural and social interactions are key for language, please continue.
+    - I think language research is meaningful, please go on.
+    - I believe brain development matters in language, go on.
+    - I think diverse language exposure is impactful, keep going.
+    
+
 - intent: conclude_lesson
   examples: |
     - Wow, that was incredible! 
