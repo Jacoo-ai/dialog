@@ -23,7 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/venv_asr" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.9 (dialog)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (dialog1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@deepgram" level="application" />
     <orderEntry type="library" name="rapport" level="application" />

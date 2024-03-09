@@ -4,10 +4,10 @@ intents:
   - start_lesson
   - request_continuation
   - conclude_lesson
-  - ask_for_clarification
-  - ask_about_duration
-  - ask_about_identity_change
-  - ask_about_physical_condition
+  - ask_about_previous_studies
+  - clarify_organic_molecules
+  - inquire_about_methane_lifespan
+  - ask_about_future_expeditions
   - greet
   - stop
   - continue
@@ -16,24 +16,26 @@ responses:
   # stories
 
   utter_start_lesson:
-    - text: "@story[When you picture mountain climbers scaling Mount Everest, what probably comes to mind are teams of climbers with Sherpa guides leading them to the summit, equipped with oxygen masks, supplies and tents. And in most cases you'd be right, as 97 per cent of climbers use oxygen to ascend to Everest's summit at 8,850 metres above sea level. The thin air at high altitudes makes most people breathless at three thousand metres, and the vast majority of climbers use oxygen past seven thousand metres. A typical climbing group will have eight to fifteen people in it, with an almost equal number of guides, and they'll spend weeks to get to the top after reaching Base Camp. @ask[Before we continue, I'd like you to consider these questions: What are your thoughts on the sport?]]"
+    - text: "@story[I'm good, super happy to be here with you all! Let's start.A new study published in the journal Science shows definitive evidence of organic matter on the surface of Mars. The data was collected by NASA's nuclear-powered rover Curiosity. It confirms earlier findings that the Red Planet once contained carbon-based compounds. These compounds – also called organic molecules – are essential ingredients for life as scientists understand it.
+    The organic molecules were found in Mars's Gale Crater, a large area that may have been a watery lake over three billion years ago. The rover encountered traces of the molecule in rocks extracted from the area. The rocks also contain sulfur, which scientists speculate helped preserve the organics even when the rocks were exposed to the harsh radiation on the surface of the planet. Scientists are quick to state that the presence of these organic molecules is not sufficient evidence for ancient life on Mars, as the molecules could have been formed by non-living processes. But it's still one of the most astonishing discoveries, which could lead to future revelations. Especially when one considers the other startling find that Curiosity uncovered around five years ago.
+    The rover analyses the air around it periodically, and in 2014 it found the air contained another of the most basic organic molecules and a key ingredient of natural gas: methane. One of the characteristics of methane is that it only survives a few hundred years. This means that something, somewhere on Mars, is replenishing the supply. According to NASA, Mars emits thousands of tons of methane at a time. The level of methane rises and falls at seasonal intervals in the year, almost as if the planet is breathing it.
+    @ask[Now, that is my turn to ask questions. Well, What do you think about Mars having seasons?]]"
   utter_first_breakpoint_continuation:
-    - text: "@story_continue[But ultra-distance and mountain runner Kilian Jornet Burgada ascended the mountain in May 2017 alone, without an oxygen mask or fixed ropes for climbing. Oh, and he did it in twenty-six hours. With food poisoning. And then, five days later, he did it again, this time in only seventeen hours.
-    Born in 1987, Kilian has been training for Everest his whole life. And that really does mean his whole life, as he grew up two thousand metres above sea level in the Pyrenees in the ski resort of Lles de Cerdanya in Catalonia, north-eastern Spain. While other children his age were learning to walk, Kilian was on skis. At one and a half years old he did a five-hour hike with his mother, entirely under his own steam. He left his peers even further behind when he climbed his first mountain and competed in his first cross-country ski race at age three. By age seven, he had scaled a four thousander and, at ten, he did a 42-day crossing of the Pyrenees. He was 13 when he says he started to take it 'seriously' and trained with the Ski Mountaineering Technical Centre (CTEMC) in Catalonia, entering competitions and working with a coach. At 18, he took over his own ski-mountaineering and trail-running training, with a schedule that only allows a couple of weeks of rest a year.
-    He does as many as one thousand and one hundred forty hours of endurance training a year, plus strength training and technical workouts as well as specific training in the week before a race. For his record-breaking ascent and descent of the Matterhorn, he prepared by climbing the mountain ten times until he knew every detail of it, even including where the sun would be shining at every part of the day. Sleeping only seven hours a night, Kilian Jornet seems almost superhuman. His resting heartbeat is extremely low at thirty-three beats per minute, compared with the average man's sixty per minute or an athlete's 40 per minute. He breathes more efficiently than average people too, taking in more oxygen per breath, and he has a much faster recovery time after exercise as his body quickly breaks down lactic acid – the acid in muscles that causes pain after exercise. All this is thanks to his childhood in the mountains and to genetics, but it is his mental strength that sets him apart. He often sets himself challenges to see how long he can endure difficult conditions in order to truly understand what his body and mind can cope with. For example, he almost gave himself kidney failure after only drinking 3.5 litres of water on a one hundred kilometers run in temperatures of around 40°C.
-    It would take a book to list all the races and awards he's won and the mountains he's climbed. And even here, Kilian’s achievements exceed the average person as, somehow, he finds time to record his career on his blog and has written three books, Run or Die, The Invisible Border and Summits of My Life.]"
+    - text: "@story_continue[Let’s continue. NASA suspects the methane comes from deep under the surface of the planet. The variations in temperature on the surface of Mars cause the molecule to flow upwards at higher or lower levels. For example, in the Martian winter the gas could get trapped in underground icy crystals. These crystals, called clathrates, melt in the summer and release the gas. However, the source of the methane is still a complete mystery. The world of astrobiology considers both of these studies as historical milestones. According to this information, Mars is not a dead planet. On the contrary, it is quite active and may be changing and becoming more habitable.Of course, this means further research is necessary. Scientists say they need to send new equipment to Mars, equipment that can measure the air and soil with more precision. There are already missions underway. The European Space Agency's ExoMars ship lands in 2020 and will be able to drill into the ground on Mars to analyse what it finds. Additionally, NASA is sending another Mars Rover in the same year to collect samples of Martian soil and return them to Earth.
+    The possibility of life on Mars has fascinated humans for generations. It has been the subject of endless science-fiction novels and films. Are we alone in the universe or have there been other life forms within our Solar System? If the current missions to the Red Planet continue, it looks as if we may discover the answer very soon. 
+    @ask[After learning about this text, what do you think of the question of whether life exists on Mars?]]"
   utter_conclude_lesson:
     - text: "@story[That wraps up today's lesson. I hope you found it informative and engaging. If you have any questions, feel free to ask. Otherwise, that's the end of our session for today. Thank you for participating!]"
 
   # ask & response
-  utter_ask_about_duration_response:
-    - text: "@answer[The first one took twenty-six hours and the second one took seventeen hours.]"
-  utter_ask_about_identity_change_response:
-    - text: "@answer[He became a professional mountaineer at 13 and became his own ski-mountaineering and trail-running trainer at 18.]"
-  utter_ask_about_physical_condition_response:
-    - text: "@answer[All this is thanks to his childhood in the mountains and to genetics, but it is his mental strength that sets him apart.]"
-  utter_ask_for_clarification_response:
-    - text: "@answer[At three thousand and five hundred metres, most people find it hard to breath.]"
+  utter_ask_about_previous_studies_response:
+    - text: "@answer[Yes, It confirms previous findings means it's not the first study to suggest life on Mars.]"
+  utter_clarify_organic_molecules_response:
+    - text: "@answer[Because the molecules could have been formed by non-living processes.]"
+  utter_inquire_about_methane_lifespan_response:
+    - text: "@answer[Methane survives a few hundreds years. ]"
+  utter_ask_about_future_expeditions_response:
+    - text: "@answer[There are at least two more scientific expeditions heading to Mars. They include teams from the European Space Agency and NASA.]"
   utter_greet:
     - text: "@answer[Hello, nice to meet you!]"
   utter_introduce_agent:
@@ -50,10 +52,10 @@ actions:
     - utter_start_lesson
     - utter_first_breakpoint_continuation
     - utter_conclude_lesson
-    - utter_ask_about_duration_response
-    - utter_ask_about_identity_change_response
-    - utter_ask_about_physical_condition_response
-    - utter_ask_for_clarification_response
+    - utter_ask_about_previous_studies_response
+    - utter_clarify_organic_molecules_response
+    - utter_inquire_about_methane_lifespan_response
+    - utter_ask_about_future_expeditions_response
     - utter_greet
     - utter_stop
     - utter_continue

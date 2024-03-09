@@ -4,7 +4,7 @@ stories:
 - story: complete teaching session
   steps:
   - intent: start_lesson
-  - action:  utter_start_lesson
+  - action: utter_start_lesson
 
   - intent: request_continuation
   - action: utter_first_breakpoint_continuation

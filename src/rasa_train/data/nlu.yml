@@ -35,21 +35,20 @@ nlu:
     - I'm ready for the lesson, can we start?
 - intent: request_continuation
   examples: |
-    - Mountain climbing combines intense physical challenge with profound personal achievement.
-    - I'm ready to hear more about Kilian's Everest climbs.
-    - I'm interested in learning more about Kilian's life.
-    - It offers an intimate and humbling experience with nature's beauty.
-    - I'd like to hear more about Kilian's training and physical condition.
-    - I'm eager to learn more about Kilian's life and achievements.
-    - I'm curious to know more about Kilian's physical condition.
-    - Climbing requires careful preparation and respect for inherent risks.
-    - I'm interested in learning more about Kilian's life and training.
-    - I'd like to hear more about Kilian's physical condition and training.
-    - I'm ready to hear more about Kilian's life and achievements.
-    - It's a test of mental strength and endurance in demanding conditions.
-    - I'm interested in learning more about Kilian's life and physical condition.
-    - I'm curious to know more about Kilian's life and training.
-    - Climbing fosters strong bonds and teamwork among climbers.
+    - I find Mars having complex weather patterns a fascinating discovery, please continue.
+    - I find Mars having complex weather patterns a fascinating discovery; I look forward to hearing more.
+    - I wonder about the implications of a dynamic Martian atmosphere; I'm curious about further insights.
+    - I think Mars potentially having an Earth-like climate is intriguing, let's hear more.
+    - I agree that Mars not being a dead planet is a good point, I'm eager to learn more.
+    - I'm interested in the Mars seasons,  I'm interested in further details.
+    - I find the thought of active processes on Mars interesting, please proceed with your explanation.
+    - I'm curious about the organic molecules on Mars, I anticipate more explanation.
+    - I wonder about the implications of a dynamic Martian atmosphere; I'm curious about further insights.
+    - I believe it's valid speculation that Mars might have been more habitable; I await further elaboration.
+    - I'm interested in the Mars seasons,  I'm interested in further details.
+    - I agree that the potential for life on Mars is a critical point; I'm looking forward to additional explanation.
+    - I'm curious about how seasonal changes affect Mars exploration; I'm interested in more details.
+
 - intent: conclude_lesson
   examples: |
     - Wow, that was incredible! 
@@ -71,62 +70,74 @@ nlu:
     - That's all for today's lesson, correct?
     - Are we concluding the lesson now?
 
-- intent: ask_about_duration
+- intent: ask_about_previous_studies
   examples: |
-    - How long did it take him to climb Everest?
-    - What was the duration of Kilian's first and second ascents?
-    - Can you tell us about the time it took for the climbs?
-    - How much time was needed for each Everest climb?
-    - What's the time frame for his Everest ascents?
-    - How long were Kilian's Everest expeditions?
-    - Duration of Kilian's climbs, please?
-    - Can you detail the time it took Kilian to summit Everest?
-    - How long did each Everest ascent take?
-    - Tell me the climbing duration for Kilian.
-    - What are the timings for his Everest achievements?
-    - How much time did Kilian spend climbing Everest?
-- intent: ask_about_identity_change
+    - Does this imply previous research also indicated possible life on Mars?
+    - do you mean that this is not the first study to suggest that life existed on Mars in the past?
+    - Are you suggesting this isn't the initial study hinting at past life on Mars?
+    - Is it correct to say that this study is not the first to propose the existence of past life on Mars?
+    - Does this study build on earlier theories of life on Mars?
+    - Are we understanding correctly that this isn't the first indication of Martian life?
+    - Are you implying that there have been previous studies suggesting that life once existed on Mars?
+    - Is this study reinforcing the idea of ancient life on Mars suggested by earlier research?
+    - So, this isn't the first study to point towards the possibility of life on Mars, is it?
+    - Are you saying that this study confirms previous findings?
+    - Are you indicating that earlier studies had similar findings about life on Mars?
+    - Can you confirm that this study is not the first to suggest life on Mars?
+    - Is it true that this study confirms earlier findings?
+    - Does this mean we had prior indications of life on Mars before this study?
+    - Are you saying that this study confirms previous findings?
+
+- intent: clarify_organic_molecules
   examples: |
-    - What changed for him at 13 and again at 18?
-    - Can you explain the key changes in his life at those ages?
-    - What were the turning points at ages 13 and 18?
-    - How did his life alter at 13 and 18?
-    - What significant changes occurred when he was 13 and 18?
-    - Can you detail the milestones at 13 and 18 years old?
-    - What life events marked his 13th and 18th years?
-    - Describe the transformations at ages 13 and 18.
-    - What shifts happened in his career at 13 and 18?
-    - The changes at 13 and 18, can you expand on those?
-    - What were the pivotal moments at 13 and 18 in his life?
-    - How did Kilian's direction change at 13 and 18?
-- intent: ask_about_physical_condition
+    - Why is the presence of organic molecules not enough evidence for ancient life on Mars?
+    - What makes organic molecules insufficient as proof of ancient life on Mars?
+    - What reasons do scientists give for why the discovery of organic molecules on Mars is not considered definitive evidence of ancient life?
+    - How does the discovery of organic molecules fall short of confirming past life on Mars?
+    - Could you explain why the mere presence of organic molecules is not considered conclusive proof of past life on Mars?
+    - Why aren't organic molecules alone considered proof of ancient Martian life?
+    - Why do scientists say that the presence of organic molecules is not sufficient evidence for ancient life on Mars?
+    - What causes scientists to hesitate in declaring organic molecules as evidence of life on Mars?
+    - Why don't organic molecules on Mars conclusively indicate ancient life?
+    - Can you explain why the presence of organic molecules is not enough to prove ancient life on Mars?
+    - What are the shortcomings of using organic molecules as sole evidence for ancient life on Mars?
+    - What are the reasons for why the presence of organic molecules is not considered definitive evidence of ancient life on Mars?
+    - Why is the discovery of organic molecules not taken as direct evidence of past life on Mars?
+    - Why is the presence of organic molecules not enough to confirm ancient life on Mars?
+    - Can you clarify why organic molecules are not definitive proof of life on Mars in the past?
+
+- intent: inquire_about_methane_lifespan
   examples: |
-    - How does he maintain such a great physical condition?
-    - What makes Kilian's physical condition so remarkable?
-    - Can you tell us about his training regime?
-    - What's the secret to Kilian's fitness?
-    - How does Kilian stay in top shape?
-    - Can you explain his physical training and diet?
-    - What does Kilian do to keep fit?
-    - How does Kilian prepare physically for challenges?
-    - Details on Kilian's workout routine, please?
-    - What contributes to Kilian's peak physical condition?
-    - How does he manage his physical health so well?
-    - What are the specifics of his training schedule?
-- intent: ask_for_clarification
+    - How long dose methane lives?
+    - What is the duration of methane lifespan?
+    - How long does methane typically last?
+    - What is the lifespan of methane?
+    - How long does methane survive?
+    - What is the average lifespan of methane?
+    - How long does methane usually last?
+    - What is the typical lifespan of methane?
+    - How long does methane usually survive?
+    - What is the average duration of methane lifespan?
+    - How long does methane typically survive?
+    - What is the typical duration of methane lifespan?
+    - How long does methane usually last?
+    - What is the average lifespan of methane?
+- intent: ask_about_future_expeditions
   examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
+    - What's the count of upcoming Mars missions?
+    - Do we have more missions planned to explore Mars?
+    - How many more scientific expeditions are heading to Mars?
+    - How many further scientific expeditions are scheduled for Mars exploration?
+    - How many missions to Mars are in the future agenda?
+    - Are there any other scientific expeditions planned for Mars in the near future?
+    - Are there any more scientific expeditions heading to Mars?
+    - Are additional Mars exploration missions in the pipeline?
+    - How many more scientific expeditions are planned for Mars?
+    - What number of Mars expeditions are on the schedule?
+    - Are there any further scientific expeditions scheduled for Mars exploration?
+    - Are there plans for new scientific missions to Mars soon?
+    - How many more scientific expeditions are there for Mars exploration?
+    - What's the lineup for future Mars scientific exploration?
 - intent: greet
   examples: |
     - Hello!
