@@ -10,23 +10,23 @@
 rules:
   - rule: break point 1
     steps:
-      - intent: ask_for_clarification
-      - action: utter_ask_for_clarification_response
+      - intent: preference_question
+      - action: utter_preference_question_response
 
   - rule: break point 2
     steps:
-      - intent: ask_about_duration
-      - action: utter_ask_about_duration_response
+      - intent: ask_about_smiling_proverb
+      - action: utter_smiling_proverb_info_response
 
   - rule: break point 3
     steps:
-      - intent: ask_about_identity_change
-      - action: utter_ask_about_identity_change_response
+      - intent: ask_about_smiling_intelligence
+      - action: utter_smiling_intelligence_info_response
 
   - rule: break point 4
     steps:
-      - intent: ask_about_physical_condition
-      - action: utter_ask_about_physical_condition_response
+      - intent: ask_about_eye_contact
+      - action: utter_eye_contact_info_response
 
   - rule: introduce itself
     steps:

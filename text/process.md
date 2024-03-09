@@ -3,12 +3,12 @@
 ## Story:
 1. Can you introduce yourself
 2. Let's begin our lesson
-3. I'm ready to hear more about Kilian's Everest climbs.
+3. I notice you're clearly grasping cultural respect; let's see more examples.
 4. Thanks a ton for sharing all that. 
 
 
 ## Questions
-1. Could you clarify at what altitude it's hard to breathe?
-2. How long did it take him to climb Everest?
-3. What changed for him at 13 and again at 18?
-4. What's the secret to Kilian's fitness?
+1. Preferred address for Europeans and Latin Americans in business?
+2. Which Russian proverb related to smiling is cited in the text?
+3. Where were smiling individuals rated as more intelligent?
+4. How is direct eye contact seen in Japan or Korea?

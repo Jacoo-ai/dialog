@@ -35,21 +35,23 @@ nlu:
     - I'm ready for the lesson, can we start?
 - intent: request_continuation
   examples: |
-    - Mountain climbing combines intense physical challenge with profound personal achievement.
-    - I'm ready to hear more about Kilian's Everest climbs.
-    - I'm interested in learning more about Kilian's life.
-    - It offers an intimate and humbling experience with nature's beauty.
-    - I'd like to hear more about Kilian's training and physical condition.
-    - I'm eager to learn more about Kilian's life and achievements.
-    - I'm curious to know more about Kilian's physical condition.
-    - Climbing requires careful preparation and respect for inherent risks.
-    - I'm interested in learning more about Kilian's life and training.
-    - I'd like to hear more about Kilian's physical condition and training.
-    - I'm ready to hear more about Kilian's life and achievements.
-    - It's a test of mental strength and endurance in demanding conditions.
-    - I'm interested in learning more about Kilian's life and physical condition.
-    - I'm curious to know more about Kilian's life and training.
-    - Climbing fosters strong bonds and teamwork among climbers.
+    - I see you're right on target about cultural awareness; let's explore these differences further.
+    - I notice you're clearly grasping cultural respect; let's see more examples.
+    - I appreciate your great answer, highlighting respect and trust; let's continue exploring these nuances.
+    - I acknowledge your excellent recognition of etiquette's impact; I'm eager for more specifics.
+    - I agree, understanding etiquette is key to successful communication; please, continue with examples.
+    - I agree, understanding etiquette is key to successful communication; please, continue with examples.
+    - I find your response impressive, emphasizing cultural sensitivity; let's hear more examples.
+    - I commend your understanding of first impressions; I'm awaiting further insights.
+    - I believe you've hit the nail on the head about trust and respect; let's delve deeper into this topic.
+    - I agree that's a valuable perspective on international business relationships; now, let's learn more about these differences.
+    - I recognize you're really understanding international etiquette; let's delve into details.
+    - I find your insight into business etiquette insightful; I'm eager for more from our guest.
+    - I concur, respect and trust are absolutely foundational; now, let's explore further.
+    - I agree it's spot on about making a good impression; now, let's get into these cultural differences.
+    - I see you've captured the essence perfectly; let's hear more about these nuances in real scenarios.
+    - I think it's a great point about understanding cultural differences; let's continue with more examples.
+
 - intent: conclude_lesson
   examples: |
     - Wow, that was incredible! 
@@ -71,62 +73,84 @@ nlu:
     - That's all for today's lesson, correct?
     - Are we concluding the lesson now?
 
-- intent: ask_about_duration
+- intent: preference_question
   examples: |
-    - How long did it take him to climb Everest?
-    - What was the duration of Kilian's first and second ascents?
-    - Can you tell us about the time it took for the climbs?
-    - How much time was needed for each Everest climb?
-    - What's the time frame for his Everest ascents?
-    - How long were Kilian's Everest expeditions?
-    - Duration of Kilian's climbs, please?
-    - Can you detail the time it took Kilian to summit Everest?
-    - How long did each Everest ascent take?
-    - Tell me the climbing duration for Kilian.
-    - What are the timings for his Everest achievements?
-    - How much time did Kilian spend climbing Everest?
-- intent: ask_about_identity_change
+    - How are Continental Europeans and Latin Americans addressed in first business meetings?
+    - What is the preferred form of address for many Continental Europeans and Latin Americans in initial business meetings?
+    - Preferred address for Europeans and Latin Americans in business?
+    - How do many Continental Europeans and Latin Americans prefer to be addressed when meeting someone in a business context for the first time?
+    - How do people from Continental Europe and Latin America like to be addressed during a first business encounter?
+    - Continental Europe and Latin America: first encounter address style?
+    - What addressing style do Continental Europeans and Latin Americans favor in first-time business interactions?
+    - First-time greeting in Continental European and Latin American business?
+    - What is the preferred form of address for many Continental Europeans and Latin Americans in initial business meetings?
+    - How do people from Continental Europe and Latin America like to be addressed during a first business encounter?
+    - What addressing style do Continental Europeans and Latin Americans favor in first-time business interactions?
+    - What's the common greeting for business introductions in Continental Europe and Latin America?
+    - Business greeting norms in Continental Europe and Latin America?
+    - How should you address Continental Europeans and Latin Americans in a first business meeting?
+    - What's the typical form of address in initial business encounters in Continental Europe and Latin America?
+    - How is it customary to greet business contacts from Continental Europe and Latin America initially?
+    - Usual address in Continental Europe and Latin America's business meetings?
+    - What's the usual addressing style for first-time business interactions in Continental Europe and Latin America?
+    - Customary business greetings for Europeans and Latin Americans?
+- intent: ask_about_smiling_proverb
   examples: |
-    - What changed for him at 13 and again at 18?
-    - Can you explain the key changes in his life at those ages?
-    - What were the turning points at ages 13 and 18?
-    - How did his life alter at 13 and 18?
-    - What significant changes occurred when he was 13 and 18?
-    - Can you detail the milestones at 13 and 18 years old?
-    - What life events marked his 13th and 18th years?
-    - Describe the transformations at ages 13 and 18.
-    - What shifts happened in his career at 13 and 18?
-    - The changes at 13 and 18, can you expand on those?
-    - What were the pivotal moments at 13 and 18 in his life?
-    - How did Kilian's direction change at 13 and 18?
-- intent: ask_about_physical_condition
+    - I'm curious about What is the Russian proverb mentioned in the article that relates to smiling?
+    - Which Russian proverb related to smiling is cited in the text?
+    - What is the mentioned Russian adage that pertains to smiling?
+    - What is the Russian proverb about smiling?
+    - Can you tell me the Russian proverb about smiling?
+    - What is the Russian saying about smiling?
+    - What Russian proverb on smiling does the article mention?
+    - The Russian saying about smiling in the article?
+    - Which smiling-related Russian proverb is in the text?
+    - Could you identify the Russian proverb regarding smiling?
+    - The article's mentioned Russian proverb on smiling?
+    - What's the Russian proverb involving smiling mentioned here?
+    - What's the smiling-related Russian proverb mentioned?
+- intent: ask_about_smiling_intelligence
   examples: |
-    - How does he maintain such a great physical condition?
-    - What makes Kilian's physical condition so remarkable?
-    - Can you tell us about his training regime?
-    - What's the secret to Kilian's fitness?
-    - How does Kilian stay in top shape?
-    - Can you explain his physical training and diet?
-    - What does Kilian do to keep fit?
-    - How does Kilian prepare physically for challenges?
-    - Details on Kilian's workout routine, please?
-    - What contributes to Kilian's peak physical condition?
-    - How does he manage his physical health so well?
-    - What are the specifics of his training schedule?
-- intent: ask_for_clarification
+    - which countries were smiling individuals considered more intelligent?
+    - In which countries were smiling people seen as more intelligent?
+    - Where were smiling individuals rated as more intelligent?
+    - In which countries were smiling people considered more intelligent?
+    - In which countries is smiling associated with higher intelligence?
+    - Where were smiling individuals seen as more intelligent?
+    - Where is people who smile perceived as more intelligent?
+    - In which countries were smiling individuals considered more intelligent?
+    - Where were smiling individuals rated as more intelligent?
+    - In which countries were smiling people considered more intelligent?
+    - Which nations view smiling individuals as more intelligent?
+    - In what countries is a smiling person thought to be more intelligent?
+    - Which countries associate smiling with greater intelligence?
+    - Where is smiling linked to higher intelligence perception?
+    - In which locations are smiling people regarded as smarter?
+    - What countries consider a smiling person as more intelligent?
+    - Where do people who smile get perceived as more intelligent?
+    - Which places rate smiling individuals as more intelligent?
+- intent: ask_about_eye_contact
   examples: |
-    - Could you clarify at what altitude it's hard to breathe?
-    - I didn't get the part about the altitude. Can you explain again?
-    - What altitude makes breathing difficult?
-    - Can you go over the altitude details once more?
-    - I'm confused about the altitude, can you clarify?
-    - What's the critical altitude for breathing issues?
-    - Explain the altitude effect again, please.
-    - I need more information on the altitude problem.
-    - Can you clarify the altitude where oxygen is needed?
-    - The altitude part was unclear, can you elaborate?
-    - What altitude starts to affect climbers?
-    - At what height does the air get too thin?
+    - could you clarify How is direct eye contact perceived in Japan or Korea? 
+    - How is direct eye contact seen in Japan or Korea?
+    - What is the perception of direct eye contact in Japan or Korea?
+    - How is direct eye contact viewed in Japan or Korea?
+    - How do people in Japan or Korea view direct eye contact?
+    - How is making direct eye contact regarded in Japan or Korea?
+    - In Japan or Korea, what are the cultural attitudes towards direct eye contact?
+    - What does direct eye contact signify in Japanese and Korean cultures?
+    - How is direct eye contact perceived in Japan or Korea?
+    - What's the cultural stance on direct eye contact in Japan or Korea?
+    - How is sustained eye contact interpreted in Japan and Korea?
+    - What are the cultural views on direct eye contact in Japan or Korea?
+    - In Japan or Korea, how is direct eye contact culturally received?
+    - What does making direct eye contact mean in Japan and Korea?
+    - How do Japanese and Korean cultures perceive direct eye contact?
+    - What significance does direct eye contact hold in Japan and Korea?
+    - How is direct eye contact understood culturally in Japan and Korea?
+    - How do Japan and Korea interpret direct eye contact culturally?
+    - What is the cultural interpretation of direct eye contact in Japan and Korea?
+
 - intent: greet
   examples: |
     - Hello!
