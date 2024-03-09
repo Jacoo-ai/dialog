@@ -33,24 +33,6 @@ nlu:
     - Ready to start, please proceed.
     - Can we start the class now?
     - I'm ready for the lesson, can we start?
-- intent: request_continuation
-  examples: |
-    - I see you're right on target about cultural awareness; let's explore these differences further.
-    - I notice you're clearly grasping cultural respect; let's see more examples.
-    - I appreciate your great answer, highlighting respect and trust; let's continue exploring these nuances.
-    - I acknowledge your excellent recognition of etiquette's impact; I'm eager for more specifics.
-    - I agree, understanding etiquette is key to successful communication; please, continue with examples.
-    - I agree, understanding etiquette is key to successful communication; please, continue with examples.
-    - I find your response impressive, emphasizing cultural sensitivity; let's hear more examples.
-    - I commend your understanding of first impressions; I'm awaiting further insights.
-    - I believe you've hit the nail on the head about trust and respect; let's delve deeper into this topic.
-    - I agree that's a valuable perspective on international business relationships; now, let's learn more about these differences.
-    - I recognize you're really understanding international etiquette; let's delve into details.
-    - I find your insight into business etiquette insightful; I'm eager for more from our guest.
-    - I concur, respect and trust are absolutely foundational; now, let's explore further.
-    - I agree it's spot on about making a good impression; now, let's get into these cultural differences.
-    - I see you've captured the essence perfectly; let's hear more about these nuances in real scenarios.
-    - I think it's a great point about understanding cultural differences; let's continue with more examples.
 
 - intent: conclude_lesson
   examples: |

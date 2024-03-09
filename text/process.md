@@ -3,8 +3,7 @@
 ## Story:
 1. Can you introduce yourself
 2. Let's begin our lesson
-3. I notice you're clearly grasping cultural respect; let's see more examples.
-4. Thanks a ton for sharing all that. 
+3. Thanks a ton for sharing all that. 
 
 
 ## Questions
