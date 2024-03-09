@@ -42,14 +42,16 @@ nlu:
     - I'd like to hear more about Kilian's training and physical condition.
     - I'm eager to learn more about Kilian's life and achievements.
     - I'm curious to know more about Kilian's physical condition.
-    - Climbing requires careful preparation and respect for inherent risks.
+    - I see it as a blend of fear and wonder; let's delve deeper into this story.
     - I'm interested in learning more about Kilian's life and training.
     - I'd like to hear more about Kilian's physical condition and training.
     - I'm ready to hear more about Kilian's life and achievements.
     - It's a test of mental strength and endurance in demanding conditions.
     - I'm interested in learning more about Kilian's life and physical condition.
     - I'm curious to know more about Kilian's life and training.
-    - Climbing fosters strong bonds and teamwork among climbers.
+    - I believe it's a journey within and up the mountain; let's continue.
+    - I find that observation insightful; mental strength is key. More on this adventure, please.
+    - I think it's a great point about the human spirit versus nature; let's explore this further.
 - intent: conclude_lesson
   examples: |
     - Wow, that was incredible! 

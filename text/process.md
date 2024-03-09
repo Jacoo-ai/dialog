@@ -3,7 +3,7 @@
 ## Story:
 1. Can you introduce yourself
 2. Let's begin our lesson
-3. I'm ready to hear more about Kilian's Everest climbs.
+3. I see it as a blend of fear and wonder; let's delve deeper into this story.
 4. Thanks a ton for sharing all that. 
 
 
