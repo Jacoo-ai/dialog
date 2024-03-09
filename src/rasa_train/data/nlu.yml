@@ -33,20 +33,6 @@ nlu:
     - Ready to start, please proceed.
     - Can we start the class now?
     - I'm ready for the lesson, can we start?
-- intent: request_continuation
-  examples: |
-    - I think cultural and social interactions play a crucial role in language development, please continue.
-    - I believe the research in the language domain is meaningful, please continue.
-    - Perhaps brain development and neurological factors contribute significantly, go on with the lesson.
-    - I think the development of the human species is a key factor, please continue.
-    - I think cognitive abilities and memory capacity might influence language skills, go on.
-    - I think the development of the human species is a key factor, please continue.
-    - I believe exposure to diverse languages and experiences can impact language skills, keep going.
-    - I suppose individual motivation and practice play a role in language acquisition, continue please.
-    - I think cultural and social interactions are key for language, please continue.
-    - I think language research is meaningful, please go on.
-    - I believe brain development matters in language, go on.
-    - I think diverse language exposure is impactful, keep going.
     
 
 - intent: conclude_lesson

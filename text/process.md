@@ -3,7 +3,6 @@
 ## Story:
 1. Tell us about you.
 2. Let's start with today's lesson.
-3. I think language research is meaningful, please go on.
 4. I bet everyone's got a lot to think about now. 
 
 
