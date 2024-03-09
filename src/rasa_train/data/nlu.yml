@@ -33,21 +33,6 @@ nlu:
     - Ready to start, please proceed.
     - Can we start the class now?
     - I'm ready for the lesson, can we start?
-- intent: request_continuation
-  examples: |
-    - I find Mars having complex weather patterns a fascinating discovery, please continue.
-    - I find Mars having complex weather patterns a fascinating discovery; I look forward to hearing more.
-    - I wonder about the implications of a dynamic Martian atmosphere; I'm curious about further insights.
-    - I think Mars potentially having an Earth-like climate is intriguing, let's hear more.
-    - I agree that Mars not being a dead planet is a good point, I'm eager to learn more.
-    - I'm interested in the Mars seasons,  I'm interested in further details.
-    - I find the thought of active processes on Mars interesting, please proceed with your explanation.
-    - I'm curious about the organic molecules on Mars, I anticipate more explanation.
-    - I wonder about the implications of a dynamic Martian atmosphere; I'm curious about further insights.
-    - I believe it's valid speculation that Mars might have been more habitable; I await further elaboration.
-    - I'm interested in the Mars seasons,  I'm interested in further details.
-    - I agree that the potential for life on Mars is a critical point; I'm looking forward to additional explanation.
-    - I'm curious about how seasonal changes affect Mars exploration; I'm interested in more details.
 
 - intent: conclude_lesson
   examples: |
