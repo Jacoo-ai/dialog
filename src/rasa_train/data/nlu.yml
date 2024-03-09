@@ -33,25 +33,7 @@ nlu:
     - Ready to start, please proceed.
     - Can we start the class now?
     - I'm ready for the lesson, can we start?
-- intent: request_continuation
-  examples: |
-    - Mountain climbing combines intense physical challenge with profound personal achievement.
-    - I'm ready to hear more about Kilian's Everest climbs.
-    - I'm interested in learning more about Kilian's life.
-    - It offers an intimate and humbling experience with nature's beauty.
-    - I'd like to hear more about Kilian's training and physical condition.
-    - I'm eager to learn more about Kilian's life and achievements.
-    - I'm curious to know more about Kilian's physical condition.
-    - I see it as a blend of fear and wonder; let's delve deeper into this story.
-    - I'm interested in learning more about Kilian's life and training.
-    - I'd like to hear more about Kilian's physical condition and training.
-    - I'm ready to hear more about Kilian's life and achievements.
-    - It's a test of mental strength and endurance in demanding conditions.
-    - I'm interested in learning more about Kilian's life and physical condition.
-    - I'm curious to know more about Kilian's life and training.
-    - I believe it's a journey within and up the mountain; let's continue.
-    - I find that observation insightful; mental strength is key. More on this adventure, please.
-    - I think it's a great point about the human spirit versus nature; let's explore this further.
+
 - intent: conclude_lesson
   examples: |
     - Wow, that was incredible! 

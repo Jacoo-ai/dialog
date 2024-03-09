@@ -25,7 +25,7 @@ class Rasa:
         return text
 
 
-model_path = "rasa_train/models/20240309-162515-warm-edge.tar.gz"
+model_path = "rasa_train/models/20240309-214415-angry-venison.tar.gz"
 # model_path = "rasa_train/models/20240305-012050-cool-persian.tar.gz"
 # model_path = "rasa_train/models/20240213-212046-largo-twitch.tar.gz"
 print("rasa server started...")
