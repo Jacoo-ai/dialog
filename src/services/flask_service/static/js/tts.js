@@ -42,7 +42,7 @@ endButton.addEventListener('click', async () => {
 });
 
 async function send_text(text) {
-    addMessage("Agent", text, "../static/img/Agent.png");
+    // addMessage("Agent", text, "../static/img/Agent.png");
     if (enableTTS && text) {
         rapportScene.modules.tts.sendText(text)
     } else {
