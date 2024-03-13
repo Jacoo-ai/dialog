@@ -21,7 +21,9 @@ def ask_and_response():
     while True:
         asr_text_content = flask_server.wait_for_asr_text_content()
         rasa_text_content = rasa_server.wait_for_rasa_text(asr_text_content)
-        if text_server.judge_format(rasa_text_content, "continue"):
+        if not flask_server.state.tts_enable:
+            continue
+        elif text_server.judge_format(rasa_text_content, "continue"):
             break
 
         if text_server.judge_format(rasa_text_content, "answer"):
