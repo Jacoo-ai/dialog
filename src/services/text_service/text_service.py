@@ -67,5 +67,4 @@ def text_server_start(flask_server):
                 state.ask_enable = True
                 state.last_text_content = extract_text(state.last_text_content)
             flask_server.send_tts_text(state.last_text_content)
-        else:
-            time.sleep(0.1)
+        time.sleep(0.1)
